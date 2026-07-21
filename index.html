@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Muhammet Ertuğrul — CS Educator &amp; AI Consultant</title>
+  <meta name="description" content="Computer Science educator and AI consultant at the International School of Stuttgart. One-to-one tutoring for IB, AP, and IGCSE. AI integration and custom tools for schools.">
+  <meta name="author" content="Muhammet Ertuğrul">
+  <link rel="canonical" href="https://muhammetertugrul.com/">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Muhammet Ertuğrul — CS Educator &amp; AI Consultant">
+  <meta property="og:description" content="Computer Science educator and AI consultant. One-to-one tutoring for IB, AP, and IGCSE. AI integration and custom tools for schools.">
+  <meta property="og:url" content="https://muhammetertugrul.com/">
+  <meta property="og:image" content="https://muhammetertugrul.com/assets/muhammet.jpg">
+  <meta property="og:locale" content="en">
+  <meta property="og:locale:alternate" content="de">
+  <meta property="og:locale:alternate" content="tr">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@imertugrul">
+  <meta name="twitter:image" content="https://muhammetertugrul.com/assets/muhammet.jpg">
+
+  <meta name="theme-color" content="#f4f5f7">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#top" class="nav__brand">
+      <span class="mono nav__brand-mark">&lt;/&gt;</span>
+      <span>Muhammet Ertuğrul</span>
+    </a>
+
+    <button type="button" class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
+
+    <div class="nav__menu" id="navMenu">
+      <a href="#about" class="nav__link" data-i18n="nav_about">About</a>
+      <a href="#tutoring" class="nav__link" data-i18n="nav_tutoring">Private Tutoring</a>
+      <a href="#consulting" class="nav__link" data-i18n="nav_consult">For Schools</a>
+      <a href="#contact" class="nav__link" data-i18n="nav_contact">Contact</a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn lang-btn--active" data-setlang="en">EN</button>
+        <button type="button" class="lang-btn" data-setlang="de">DE</button>
+        <button type="button" class="lang-btn" data-setlang="tr">TR</button>
+      </div>
+      <a href="#contact" class="btn btn--primary btn--sm nav__cta" data-i18n="nav_cta">Enquire</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <span class="badge" data-i18n="hero_badge">Computer Science Educator · AI Consultant · Stuttgart</span>
+    <h1 class="hero__title" data-i18n="hero_h1">Computer Science Education. Beyond the Classroom.</h1>
+    <p class="hero__text" data-i18n="hero_p">I prepare students for IB, AP, and IGCSE Computer Science examinations, and work with schools on AI adoption, curriculum development, and teacher training. Both draw on fifteen years of teaching Computer Science in international schools — at Robert College Istanbul and the International School of Stuttgart.</p>
+    <div class="hero__actions">
+      <a href="#contact" class="btn btn--primary" data-i18n="hero_cta1">Enquire</a>
+      <a href="#work" class="btn btn--ghost" data-i18n="hero_cta2">See my work</a>
+    </div>
+    <div class="chips">
+      <a href="#tutoring" class="chip chip--primary">
+        <span class="chip__dot"></span><span data-i18n="chip_tutoring">1:1 Tutoring</span>
+      </a>
+      <a href="#consulting" class="chip">
+        <span class="chip__dot" style="background:#3a6ea5;"></span><span data-i18n="chip_schools">For Schools</span>
+      </a>
+      <a href="#consulting" class="chip">
+        <span class="chip__dot" style="background:#7a5aa0;"></span><span data-i18n="chip_ai">AI &amp; CS</span>
+      </a>
+      <a href="#robotics" class="chip">
+        <span class="chip__dot" style="background:#3f7d54;"></span><span data-i18n="chip_robotics">Robotics</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section section--surface2">
+    <div class="container">
+      <span class="label" data-i18n="about_label">// about</span>
+      <div class="about-grid">
+        <div class="about__text">
+          <h2 class="h2 h2--flush" data-i18n-html="about_h2">Hi, I'm <mark>Muhammet</mark>.</h2>
+          <p class="about__p" data-i18n="about_p1">I started teaching Computer Science in 2009 at Robert College, Istanbul — one of Turkey's most selective schools. Over eight years, I built CS programmes, coached robotics teams, and learned how to make abstract ideas land with teenagers who thought they weren't "computer people." In 2017, I moved to the International School of Stuttgart, where I've taught IB DP CS, AP Computer Science, and MYP, and built a Robotics &amp; AI Club from scratch.</p>
+          <p class="about__p" data-i18n="about_p2">Every area of the work outside the classroom connects back to something I have been thinking about inside it for fifteen years: how do students and institutions actually learn and change? Curriculum design, AI adoption, and robotics coaching are different applications of the same question.</p>
+          <div class="creds">
+            <span class="cred" data-i18n="cred1">IB DP CS (SL &amp; HL)</span>
+            <span class="cred" data-i18n="cred2">Google Certified Trainer</span>
+            <span class="cred" data-i18n="cred3">AP CS A</span>
+            <span class="cred" data-i18n="cred4">Digital Citizenship Educator</span>
+            <span class="cred" data-i18n="cred5">15+ years across international schools</span>
+          </div>
+        </div>
+        <div class="about__photo">
+          <img src="assets/muhammet.jpg" alt="Muhammet Ertuğrul" width="900" height="1125" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY WORK WITH ME -->
+  <section id="why" class="section">
+    <div class="section-head">
+      <span class="label" data-i18n="why_label">// why work with me</span>
+      <span class="rule"></span>
+    </div>
+    <h2 class="h2" data-i18n="why_h2">Grounded in fifteen years of teaching in international schools.</h2>
+    <p class="lead" data-i18n="why_lead">Everything I offer — for students and schools alike — comes from direct classroom experience across two countries and three international programmes.</p>
+    <div class="why-grid">
+      <article class="why-card">
+        <h3 class="why-card__title" data-i18n="why1_title">Classroom Authority</h3>
+        <p class="why-card__body" data-i18n="why1_body">I teach what I consult on. When I advise a school on AI integration or CS curriculum, it comes from fifteen years of doing exactly that in international classrooms — at Robert College Istanbul and the International School of Stuttgart.</p>
+      </article>
+      <article class="why-card">
+        <h3 class="why-card__title" data-i18n="why2_title">Technical Depth</h3>
+        <p class="why-card__body" data-i18n="why2_body">I implement what I recommend. Whether it is a custom AI agent, automated workflows for school administration, or a robotics curriculum, I can move from strategy to working software without involving a third party.</p>
+      </article>
+      <article class="why-card">
+        <h3 class="why-card__title" data-i18n="why3_title">Curriculum Expertise</h3>
+        <p class="why-card__body" data-i18n="why3_body">IB, AP, IGCSE. I know these programmes from the inside — the assessment criteria, the internal assessments, the examiner expectations. Sessions are structured around what the exam actually rewards.</p>
+      </article>
+      <article class="why-card">
+        <h3 class="why-card__title" data-i18n="why4_title">Independent Perspective</h3>
+        <p class="why-card__body" data-i18n="why4_body">No vendor relationships, no software commissions, no referral arrangements. When I recommend a tool or an approach, it is because it fits the school's actual situation.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRIVATE TUTORING -->
+  <section id="tutoring" class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="label" data-i18n="tut_label">// private tutoring</span>
+        <span class="rule"></span>
+      </div>
+      <h2 class="h2" data-i18n="tut_h2">One-to-one CS tutoring, online.</h2>
+      <p class="lead" data-i18n="tut_intro">Focused sessions built around your syllabus, your weak spots, and the exam you're preparing for.</p>
+
+      <div class="courses">
+        <!-- IB -->
+        <article class="course-card course-card--ib">
+          <h3 class="course-card__title">IB DP Computer Science</h3>
+          <span class="tag" data-i18n="course1_tag">IB Diploma</span>
+          <p class="course-card__desc" data-i18n="course1_desc">2027 syllabus, Paper 3 removed. SL and HL.</p>
+          <ul class="feature-list">
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course1_b1">New 2027 curriculum — five core units</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course1_b2">Java &amp; Python — both languages, both papers</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course1_b3">IA guidance from topic selection to submission</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course1_b4">Past papers, mark schemes, exam technique</span></li>
+          </ul>
+          <a href="#contact" class="card-cta" data-i18n="course_cta">Book this course →</a>
+        </article>
+
+        <!-- AP CS A -->
+        <article class="course-card course-card--apa">
+          <h3 class="course-card__title">AP Computer Science A</h3>
+          <span class="tag" data-i18n="course2_tag">College Board</span>
+          <p class="course-card__desc" data-i18n="course2_desc">Java, from first class to the exam.</p>
+          <ul class="feature-list">
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course2_b1">Object-oriented Java — classes, inheritance, recursion</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course2_b2">Free-response labs with real feedback</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course2_b3">AP exam strategy: multiple choice and FRQ</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course2_b4">College credit is the goal — we build toward it</span></li>
+          </ul>
+          <a href="#contact" class="card-cta" data-i18n="course_cta">Book this course →</a>
+        </article>
+
+        <!-- AP Principles -->
+        <article class="course-card course-card--app">
+          <h3 class="course-card__title">AP Computer Science Principles</h3>
+          <span class="tag" data-i18n="course3_tag">College Board</span>
+          <p class="course-card__desc" data-i18n="course3_desc">Big ideas, the Create task, and the end-of-course exam.</p>
+          <ul class="feature-list">
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course3_b1">Programming and abstraction — no prior experience needed</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course3_b2">Create Performance Task from idea to submission</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course3_b3">Data, internet, and computing impacts</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course3_b4">End-of-course exam, addressed directly</span></li>
+          </ul>
+          <a href="#contact" class="card-cta" data-i18n="course_cta">Book this course →</a>
+        </article>
+
+        <!-- IGCSE -->
+        <article class="course-card course-card--igcse">
+          <h3 class="course-card__title">IGCSE Computer Science</h3>
+          <span class="tag" data-i18n="course4_tag">Cambridge &amp; Edexcel</span>
+          <p class="course-card__desc" data-i18n="course4_desc">Theory and programming for ages 14–16.</p>
+          <ul class="feature-list">
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course4_b1">Cambridge 0478 and Edexcel — both boards covered</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course4_b2">Pseudocode, algorithms, and actual programming</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course4_b3">Python for practical problem-solving</span></li>
+            <li><span class="feature-list__mark">▹</span><span data-i18n="course4_b4">Paper-by-paper prep — theory and practical</span></li>
+          </ul>
+          <a href="#contact" class="card-cta" data-i18n="course_cta">Book this course →</a>
+        </article>
+      </div>
+
+      <div class="lessons-note">
+        <p data-i18n="tut_note">Sessions are online, one-to-one, with a shared code editor. The first session is a diagnostic — we look at where you are, what the exam expects, and where the gap is.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI & CS FOR SCHOOLS -->
+  <section id="consulting" class="section">
+    <div class="section-head">
+      <span class="label" data-i18n="con_label">// working with schools</span>
+      <span class="rule"></span>
+    </div>
+    <h2 class="h2" data-i18n="con_h2">AI and CS for schools.</h2>
+    <p class="lead" data-i18n="con_intro">Most schools have made AI a priority. The harder question is what that looks like in practice — which tools, which workflows, which training — and how to implement it in a way that changes what actually happens in classrooms.</p>
+
+    <div class="cards2">
+      <article class="card">
+        <div class="card__head">
+          <span class="icon-badge icon-badge--blue">◆</span>
+          <h3 class="card__title" data-i18n="conA_title">AI Integration Consulting</h3>
+        </div>
+        <p class="card__desc" data-i18n="conA_desc">Strategy, practical training, and curriculum integration — designed around how your school actually works.</p>
+        <ul class="feature-list feature-list--blue">
+          <li><span class="feature-list__mark">▹</span><span data-i18n="conA_b1">AI integration at the curriculum level, across subjects and year groups</span></li>
+          <li><span class="feature-list__mark">▹</span><span data-i18n="conA_b2">Teacher training built around your tools, your subjects, and your team</span></li>
+          <li><span class="feature-list__mark">▹</span><span data-i18n="conA_b3">Vendor-neutral advice — no reseller kickbacks</span></li>
+        </ul>
+        <div class="who" data-i18n="conA_who">School leaders and curriculum teams</div>
+      </article>
+
+      <article class="card">
+        <div class="card__head">
+          <span class="icon-badge icon-badge--purple">✳</span>
+          <h3 class="card__title" data-i18n="conB_title">Custom AI Tools &amp; Agents</h3>
+        </div>
+        <p class="card__desc" data-i18n="conB_desc">Custom tools designed around your school's actual administrative and pedagogical workflows.</p>
+        <ul class="feature-list feature-list--purple">
+          <li><span class="feature-list__mark">▹</span><span data-i18n="conB_b1">Administrative automation that saves real hours</span></li>
+          <li><span class="feature-list__mark">▹</span><span data-i18n="conB_b2">Student-facing tools and assistants</span></li>
+          <li><span class="feature-list__mark">▹</span><span data-i18n="conB_b3">Teacher-facing tools that reduce administrative overhead</span></li>
+        </ul>
+        <div class="who" data-i18n="conB_who">Schools and education startups</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ROBOTICS & AI PROGRAMME -->
+  <section id="robotics" class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="label" data-i18n="rob_label">// hands-on</span>
+        <span class="rule"></span>
+      </div>
+      <h2 class="h2" data-i18n="rob_h2">Robotics &amp; AI Programme</h2>
+      <p class="lead" data-i18n="rob_intro">A structured engineering programme where students design complete robotic systems — combining programming, electronics, Arduino, Raspberry Pi, sensors, and artificial intelligence — from initial concept through to competition.</p>
+      <ul class="feature-list feature-list--green feature-list--lg rob-features">
+        <li><span class="feature-list__mark">▹</span><span data-i18n="rob_b1">A full curriculum covering programming, electronics, mechanical design, and AI</span></li>
+        <li><span class="feature-list__mark">▹</span><span data-i18n="rob_b2">Team coaching from initial concept through to competition day</span></li>
+        <li><span class="feature-list__mark">▹</span><span data-i18n="rob_b3">Competition preparation at every stage of the process</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="section-head">
+      <span class="label" data-i18n="exp_label">// experience</span>
+      <span class="rule"></span>
+    </div>
+    <h2 class="h2" data-i18n="exp_h2">Where I've worked.</h2>
+    <div class="exp-grid">
+      <article class="exp-card">
+        <div class="exp-card__head">
+          <div>
+            <div class="exp-card__org" data-i18n="exp1_org">International School of Stuttgart</div>
+            <div class="exp-card__loc" data-i18n="exp1_loc">Stuttgart, Germany</div>
+          </div>
+          <div class="exp-card__period" data-i18n="exp1_period">2017 – Present</div>
+        </div>
+        <ul class="exp-roles">
+          <li class="exp-role"><span data-i18n="exp1_r1">IB DP Computer Science (SL &amp; HL)</span></li>
+          <li class="exp-role"><span data-i18n="exp1_r2">AP Computer Science A</span></li>
+          <li class="exp-role"><span data-i18n="exp1_r3">MYP</span></li>
+          <li class="exp-role"><span data-i18n="exp1_r4">Robotics &amp; AI Club — Founder &amp; Coach</span></li>
+        </ul>
+      </article>
+
+      <article class="exp-card">
+        <div class="exp-card__head">
+          <div>
+            <div class="exp-card__org" data-i18n="exp2_org">Robert College Istanbul</div>
+            <div class="exp-card__loc" data-i18n="exp2_loc">Istanbul, Turkey</div>
+          </div>
+          <div class="exp-card__period" data-i18n="exp2_period">2009 – 2017</div>
+        </div>
+        <ul class="exp-roles">
+          <li class="exp-role"><span data-i18n="exp2_r1">Computer Science</span></li>
+          <li class="exp-role"><span data-i18n="exp2_r2">AP Computer Science</span></li>
+          <li class="exp-role"><span data-i18n="exp2_r3">Robotics Club — Founder &amp; Coach</span></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONFERENCES & WORKSHOPS -->
+  <section id="conferences" class="section section--surface2">
+    <div class="container">
+      <div class="section-head">
+        <span class="label" data-i18n="conf_label">// speaking &amp; presenting</span>
+        <span class="rule"></span>
+      </div>
+      <h2 class="h2" data-i18n="conf_h2">Conferences &amp; Workshops</h2>
+      <ul class="conf-list">
+        <li class="conf-item">
+          <span class="conf-item__name" data-i18n="conf1_name">IB Global Conference</span>
+          <span class="conf-item__loc" data-i18n="conf1_loc">The Hague, Netherlands</span>
+        </li>
+        <li class="conf-item">
+          <span class="conf-item__name" data-i18n="conf2_name">Apple Education Leadership Summit (AELS)</span>
+          <span class="conf-item__loc" data-i18n="conf2_loc">Munich, Germany</span>
+        </li>
+        <li class="conf-item">
+          <span class="conf-item__name" data-i18n="conf3_name">ECIS Leadership &amp; Management Conference</span>
+          <span class="conf-item__loc" data-i18n="conf3_loc">Frankfurt, Germany</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
+    <div class="section-head">
+      <span class="label" data-i18n="cert_label">// credentials</span>
+      <span class="rule"></span>
+    </div>
+    <h2 class="h2" data-i18n="cert_h2">Certifications</h2>
+    <div class="cert-grid">
+      <article class="cert-card">
+        <div class="cert-card__name" data-i18n="cert1_name">Google Certified Trainer</div>
+        <div class="cert-card__org" data-i18n="cert1_org">Google for Education</div>
+      </article>
+      <article class="cert-card">
+        <div class="cert-card__name" data-i18n="cert2_name">Google Certified Educator Level 2</div>
+        <div class="cert-card__org" data-i18n="cert2_org">Google for Education</div>
+      </article>
+      <article class="cert-card">
+        <div class="cert-card__name" data-i18n="cert3_name">Apple Teacher</div>
+        <div class="cert-card__org" data-i18n="cert3_org">Apple</div>
+      </article>
+      <article class="cert-card">
+        <div class="cert-card__name" data-i18n="cert4_name">AP Computer Science A Certified Teacher</div>
+        <div class="cert-card__org" data-i18n="cert4_org">College Board</div>
+      </article>
+      <article class="cert-card">
+        <div class="cert-card__name" data-i18n="cert5_name">Digital Citizenship Educator</div>
+        <div class="cert-card__org" data-i18n="cert5_org">Common Sense Education</div>
+      </article>
+      <article class="cert-card">
+        <div class="cert-card__name" data-i18n="cert6_name">IB Educator</div>
+        <div class="cert-card__org" data-i18n="cert6_org">International Baccalaureate</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK -->
+  <section id="work" class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="label" data-i18n="work_label">// selected work</span>
+        <span class="rule"></span>
+      </div>
+      <h2 class="h2" data-i18n="work_h2">Featured Work</h2>
+      <p class="lead" data-i18n="work_lead">Projects in Computer Science education, artificial intelligence, and engineering.</p>
+      <div class="work-grid">
+        <article class="work-card">
+          <div class="work-card__head">
+            <span class="work-card__category" data-i18n="work1_cat">AI-powered Learning Platform</span>
+            <span class="work-badge work-badge--active" data-i18n="work1_status">Active Development</span>
+          </div>
+          <h3 class="work-card__title" data-i18n="work1_title">Praxis IB</h3>
+          <p class="work-card__desc" data-i18n="work1_desc">Praxis IB is an AI-powered learning platform for IB Diploma Computer Science students. It combines adaptive practice, intelligent feedback, and curriculum-aligned study tools to help students build both examination readiness and genuine conceptual understanding of the subject. Built around the 2027 syllabus.</p>
+        </article>
+        <article class="work-card">
+          <div class="work-card__head">
+            <span class="work-card__category" data-i18n="work2_cat">AI Platform for Schools</span>
+            <span class="work-badge work-badge--active" data-i18n="work2_status">Active Development</span>
+          </div>
+          <h3 class="work-card__title" data-i18n="work2_title">SchoolPro AI</h3>
+          <p class="work-card__desc" data-i18n="work2_desc">SchoolPro AI is an AI platform designed for school administration. It automates routine workflows, supports curriculum planning and internal communication, and provides practical tools that give administrators and teachers more time for the work that requires human judgment.</p>
+        </article>
+        <article class="work-card">
+          <div class="work-card__head">
+            <span class="work-card__category" data-i18n="work3_cat">Engineering Education</span>
+            <span class="work-badge work-badge--ongoing" data-i18n="work3_status">Ongoing</span>
+          </div>
+          <h3 class="work-card__title" data-i18n="work3_title">Robotics &amp; AI Programme</h3>
+          <p class="work-card__desc" data-i18n="work3_desc">The Robotics &amp; AI Programme gives student teams the curriculum, coaching, and competitive experience to design and build complete robotic systems from scratch. Students work across programming, electronics, Arduino, Raspberry Pi, sensors, mechanical design, and artificial intelligence — developing technical skills alongside the ability to work as a team under real constraints.</p>
+        </article>
+        <article class="work-card">
+          <div class="work-card__head">
+            <span class="work-card__category" data-i18n="work4_cat">International Education</span>
+            <span class="work-badge work-badge--completed" data-i18n="work4_status">Completed</span>
+          </div>
+          <h3 class="work-card__title" data-i18n="work4_title">CS Curriculum Development</h3>
+          <p class="work-card__desc" data-i18n="work4_desc">Design and implementation of Computer Science curricula for international schools. Work includes IB Diploma and AP Computer Science alignment, assessment design, scope and sequence planning, and school-wide pathway development — from initial brief to classroom-ready materials.</p>
+        </article>
+      </div>
+      <p class="work-note" data-i18n="work_note">More projects are currently in development.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section--dark">
+    <div class="container container--narrow">
+      <span class="label label--accent" data-i18n="contact_label">// get in touch</span>
+      <h2 class="h2 h2--flush" data-i18n="contact_h2">Start a conversation.</h2>
+      <p class="lead lead--dark" data-i18n="contact_intro">Whether it's tutoring, a school project, or something else — drop me a message. I usually reply within a day.</p>
+
+      <!-- Set data-endpoint to your Formspree or Web3Forms URL to enable live submission. -->
+      <form class="form" data-endpoint="" action="" method="POST">
+        <input type="hidden" id="subjectField" name="subject" value="tutoring">
+
+        <label class="form__group-label" data-i18n="contact_subject_label">I'm interested in</label>
+        <div class="subject-pills">
+          <button type="button" class="pill pill--active" data-subject="tutoring" data-i18n="subj_tutoring">Tutoring</button>
+          <button type="button" class="pill" data-subject="schools" data-i18n="subj_schools">AI &amp; CS for Schools</button>
+          <button type="button" class="pill" data-subject="other" data-i18n="subj_other">Other</button>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label class="field__label" for="cName" data-i18n="label_name">Name</label>
+            <input class="field__input" id="cName" name="name" type="text" placeholder="Your name" data-i18n-ph="ph_name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label class="field__label" for="cEmail" data-i18n="label_email">Email</label>
+            <input class="field__input" id="cEmail" name="email" type="email" placeholder="you@email.com" data-i18n-ph="ph_email" required autocomplete="email">
+          </div>
+        </div>
+        <div class="field field--full">
+          <label class="field__label" for="cMsg" data-i18n="label_msg">Message</label>
+          <textarea class="field__input" id="cMsg" name="message" rows="4" placeholder="What are you working on?" data-i18n-ph="ph_msg" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary form__submit" data-i18n="contact_submit">Send</button>
+        <p class="form-note" id="formNote" data-i18n="form_note">Thanks — I'll be in touch soon. You can also reach me at mertugrul68@gmail.com.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand"><span class="mono footer__brand-mark">&lt;/&gt;</span><span>Muhammet Ertuğrul</span></div>
+        <div class="footer__tagline" data-i18n="footer_role">Computer Science Educator &amp; AI Consultant</div>
+        <div class="footer__desc" data-i18n="footer_desc">Helping students, educators, and schools create meaningful learning experiences through Computer Science and Artificial Intelligence.</div>
+      </div>
+      <div class="footer__links">
+        <a href="mailto:mertugrul68@gmail.com">mertugrul68@gmail.com</a>
+        <a href="https://x.com/imertugrul">@imertugrul</a>
+        <span class="footer__loc" data-i18n="footer_loc">Stuttgart, Germany · Istanbul, Turkey</span>
+      </div>
+    </div>
+    <div class="footer__legal-wrap">
+      <div class="footer__legal" data-i18n="footer_copy">© 2026 Muhammet Ertuğrul</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

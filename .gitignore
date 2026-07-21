@@ -1,0 +1,17 @@
+# Dependencies (none required — this is a plain static site)
+node_modules/
+
+# Vercel
+.vercel
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
