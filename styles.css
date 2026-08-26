@@ -625,11 +625,9 @@ textarea.field__input { resize: vertical; }
 .footer__links a { color: var(--dark-accent); }
 .footer__loc { color: var(--dark-muted); }
 .footer__social {
-  max-width: var(--maxw);
-  margin: 24px auto 0;
-  padding: 0 24px 24px;
   display: flex;
   gap: 16px;
+  margin-bottom: 4px;
 }
 .footer__social-link {
   color: var(--dark-muted);
