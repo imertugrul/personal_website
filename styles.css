@@ -624,6 +624,20 @@ textarea.field__input { resize: vertical; }
 .footer__links { display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
 .footer__links a { color: var(--dark-accent); }
 .footer__loc { color: var(--dark-muted); }
+.footer__social {
+  max-width: var(--maxw);
+  margin: 24px auto 0;
+  padding: 0 24px 24px;
+  display: flex;
+  gap: 16px;
+}
+.footer__social-link {
+  color: var(--dark-muted);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.footer__social-link:hover { color: var(--dark-accent); }
 .footer__legal-wrap { border-top: 1px solid var(--dark-line); }
 .footer__legal {
   max-width: var(--maxw);
