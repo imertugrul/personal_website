@@ -19,7 +19,8 @@
       about_h2: 'Hallo, ich bin <mark>Muhammet</mark>.'
     },
     tr: {
-      about_h2: 'Merhaba, Ben <mark>Muhammet</mark>.'
+      about_h2: 'Merhaba, ben <mark>Muhammet</mark>.',
+      about_p3: 'Amacım, teknolojiyi yalnızca öğreten değil; öğrencilerin <strong>üreten, sorgulayan ve geleceğin problemlerine çözüm geliştiren bireyler</strong> olmalarını destekleyen bir öğrenme ortamı oluşturmak.'
     }
   };
 
@@ -144,9 +145,9 @@
       hero_cta1: 'İletişime Geçin', hero_cta2: 'Projelerimi İnceleyin',
       chip_tutoring: 'Birebir Özel Ders', chip_schools: 'Okullar İçin', chip_ai: 'Yapay Zekâ & Bilgisayar Bilimi', chip_robotics: 'Robotik',
       about_label: '// hakkımda',
-      about_p1: 'Bilgisayar Bilimi öğretmenliğine 2009 yılında, Türkiye\'nin en köklü liselerinden biri olan Robert Kolej\'de başladım. On dört yıl boyunca Bilgisayar Bilimi müfredatları geliştirdim, robotik kulüpler kurdum ve proje tabanlı öğrenmeyi derslerin merkezine taşıdım. 2023\'te Almanya\'ya taşınarak International School of Stuttgart\'ta IB DP Bilgisayar Bilimi, AP Bilgisayar Bilimi ve MYP derslerini vermeye başladım; aynı zamanda sıfırdan bir Robotik ve Yapay Zekâ Kulübü kurdum.',
-      about_p2: 'Sınıf dışındaki çalışmalarımın tamamı, on yedi yıldır yanıt aradığım aynı sorudan besleniyor: Öğrenciler ve kurumlar gerçekte nasıl öğrenir, nasıl değişir? Müfredat geliştirme, yapay zekâ danışmanlığı ve robotik koçluğu; bu sorunun farklı bağlamlardaki karşılıkları.',
-      cred1: 'IB DP Bilgisayar Bilimi (SL & HL)', cred2: 'Google Sertifikalı Eğitmen', cred3: 'AP Bilgisayar Bilimi A', cred4: 'Dijital Vatandaşlık Eğitmeni', cred5: 'Uluslararası okullarda 17+ yıl',
+      about_p1: 'Bilgisayar Bilimi öğretmenliğine 2009 yılında Robert Kolej\'de başladım. On dört yıl boyunca Bilgisayar Bilimi müfredatları geliştirdim, robotik kulüpleri kurdum ve proje tabanlı öğrenmeyi sınıf pratiğimin önemli bir parçası hâline getirdim. 2023 yılında Almanya\'ya taşınarak International School of Stuttgart\'ta IB DP Bilgisayar Bilimi, AP Bilgisayar Bilimi ve MYP dersleri vermeye başladım; burada sıfırdan bir Robotik ve Yapay Zekâ Kulübü kurdum.',
+      about_p2: 'Bugün çalışmalarımı sınıfın ötesine taşıyor; öğrencilerin ve kurumların teknolojiyle birlikte nasıl öğrenip gelişebileceği üzerine çalışıyorum. Müfredat geliştirme, yapay zekânın eğitime entegrasyonu ve robotik eğitimi alanlarında öğrencilere, öğretmenlere ve okullara destek oluyorum.',
+      cred1: 'IB DP Bilgisayar Bilimi (SL & HL)', cred2: 'Google Sertifikalı Eğitmen', cred3: 'AP Bilgisayar Bilimi A', cred4: 'Dijital Vatandaşlık Eğitmeni', cred5: '17+ yıl uluslararası eğitim deneyimi',
       why_label: '// neden benimle?', why_h2: 'Neden Benimle Çalışmalısınız?',
       why_lead: 'Öğrencilere ve okullara sunduğum her şey, iki ülke ve üç uluslararası programdaki doğrudan sınıf deneyiminden doğuyor.',
       why1_title: 'Sınıf Deneyimi',
