@@ -139,8 +139,8 @@
     tr: {
       nav_about: 'Hakkımda', nav_tutoring: 'Özel Dersler', nav_consult: 'Okullar İçin', nav_contact: 'İletişim', nav_cta: 'İletişime Geçin',
       hero_badge: 'Bilgisayar Bilimi Eğitmeni · Yapay Zeka Danışmanı · Robotik Koçu',
-      hero_h1: 'Bilgisayar Bilimi Eğitimi. Sınıfın Ötesinde.',
-      hero_p: 'IB, AP ve IGCSE gibi uluslararası Bilgisayar Bilimi programlarında öğrenim gören öğrencilerle ve yapay zekâ entegrasyonu, müfredat geliştirme ve öğretmen eğitimi konularında okullarla çalışıyorum. Bu çalışmaların temelini, Robert Kolej İstanbul ve International School of Stuttgart\'ta edindiğim on yedi yılı aşkın uluslararası eğitim deneyimi oluşturuyor.',
+      hero_h1: 'Bilgisayar Bilimi Eğitimi. Yapay Zekâ Çağına Hazırlanmak.',
+      hero_p: '17 yılı aşkın uluslararası eğitim deneyimimle, Bilgisayar Bilimi eğitimi ve yapay zekânın eğitime entegrasyonu alanlarında öğrenciler, öğretmenler ve okullarla çalışıyorum. IB, AP ve IGCSE gibi uluslararası programlarda öğrenci gelişimini desteklerken; müfredat geliştirme ve öğretmen eğitimi konularında okullara danışmanlık sunuyorum.',
       hero_cta1: 'İletişime Geçin', hero_cta2: 'Projelerimi İnceleyin',
       chip_tutoring: 'Birebir Özel Ders', chip_schools: 'Okullar İçin', chip_ai: 'Yapay Zekâ & Bilgisayar Bilimi', chip_robotics: 'Robotik',
       about_label: '// hakkımda',
