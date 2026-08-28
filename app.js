@@ -363,6 +363,47 @@
     });
   }
 
+  /* ---- Carousel ------------------------------------------------------- */
+  function initCarousel() {
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.carousel').forEach(function (carousel) {
+      var slides = Array.from(carousel.querySelectorAll('.carousel__slide'));
+      var dots   = Array.from(carousel.querySelectorAll('.carousel__dot'));
+      var prev   = carousel.querySelector('.carousel__btn--prev');
+      var next   = carousel.querySelector('.carousel__btn--next');
+      var total  = slides.length;
+      var current = 0;
+      var timer = null;
+
+      function goTo(n) {
+        slides[current].classList.remove('carousel__slide--active');
+        slides[current].setAttribute('aria-hidden', 'true');
+        dots[current].classList.remove('carousel__dot--active');
+        dots[current].setAttribute('aria-pressed', 'false');
+        current = (n + total) % total;
+        slides[current].classList.add('carousel__slide--active');
+        slides[current].setAttribute('aria-hidden', 'false');
+        dots[current].classList.add('carousel__dot--active');
+        dots[current].setAttribute('aria-pressed', 'true');
+      }
+
+      function startAuto() {
+        if (reducedMotion) return;
+        timer = setInterval(function () { goTo(current + 1); }, 4000);
+      }
+
+      function resetAuto() { clearInterval(timer); startAuto(); }
+
+      if (prev) prev.addEventListener('click', function () { goTo(current - 1); resetAuto(); });
+      if (next) next.addEventListener('click', function () { goTo(current + 1); resetAuto(); });
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { goTo(i); resetAuto(); });
+      });
+
+      startAuto();
+    });
+  }
+
   /* ---- Boot ----------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', function () {
     captureEnglish();
@@ -374,6 +415,7 @@
     initPills();
     initMenu();
     initForm();
+    initCarousel();
 
     applyLang(initialLang());
   });

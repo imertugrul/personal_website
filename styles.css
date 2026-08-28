@@ -1012,7 +1012,94 @@ textarea.field__input { resize: vertical; }
 }
 
 /* ---- Robotics feature list spacing ------------------------------------- */
-.rob-features { margin-top: 28px; max-width: 54ch; }
+.rob-features { margin-top: 28px; max-width: none; }
+
+/* ---- Robotics two-column split ----------------------------------------- */
+.rob-split {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 52px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .rob-split { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* ---- Carousel ---------------------------------------------------------- */
+.rob-split__visual { width: 100%; }
+.carousel {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  background: var(--card);
+  aspect-ratio: 4 / 3;
+}
+.carousel__track { position: relative; width: 100%; height: 100%; }
+.carousel__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #eef0f4;
+}
+.carousel__slide--active { opacity: 1; }
+.carousel__slide img { width: 100%; height: 100%; object-fit: cover; }
+.carousel__ph-icon { color: #b0b8c8; }
+.carousel__ph-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #b0b8c8;
+}
+.carousel__dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+.carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.55);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+.carousel__dot--active,
+.carousel__dot:hover { background: #fff; }
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  color: var(--ink);
+}
+.carousel__btn:hover { background: #fff; }
+.carousel__btn--prev { left: 12px; }
+.carousel__btn--next { right: 12px; }
 
 /* ---- Reduced motion ---------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
