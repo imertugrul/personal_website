@@ -37,7 +37,7 @@
   --c-apa: #3f7d54;     --c-apa-soft: #e0efe4;
   --c-app: #3a6ea5;     --c-app-soft: #dde8f2;
   --c-igcse: #7a5aa0;   --c-igcse-soft: #e8e1f0;
-  --c-apc: #8C7CF0;     --c-apc-soft: #e9e7fb;
+  --c-apc: #8c7cf0;     --c-apc-soft: #e9e7fb;
 
   --maxw: 1120px;
 }
@@ -376,7 +376,7 @@ img { display: block; max-width: 100%; }
 .course-card--apa   { --c: var(--c-apa);   --c-soft: var(--c-apa-soft); }
 .course-card--app   { --c: var(--c-app);   --c-soft: var(--c-app-soft); }
 .course-card--igcse { --c: var(--c-igcse); --c-soft: var(--c-igcse-soft); }
-.course-card--apc   { --c: var(--c-apc);   --c-soft: var(--c-apc-soft); }
+.course-card--apc   { --c: #8c7cf0; --c-soft: #e9e7fb; border-top-color: #8c7cf0; }
 
 .course-card__title {
   font-family: 'Newsreader', serif;
