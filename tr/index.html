@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bilgisayar Bilimi Özel Ders ve Yapay Zeka Danışmanlığı | IB, AP, IGCSE — Muhammet Ertuğrul | Stuttgart</title>
+  <meta name="description" content="IB DP, AP CS A, AP CS Principles ve IGCSE için özel Bilgisayar Bilimi dersleri. Stuttgart'ta ve online okullara yapay zeka danışmanlığı ve robotik koçluğu.">
+  <meta name="author" content="Muhammet Ertuğrul">
+  <link rel="canonical" href="https://mrertugrul.com/tr/">
+  <link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/">
+  <link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/">
+  <link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://mrertugrul.com/en/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bilgisayar Bilimi Özel Ders ve Yapay Zeka Danışmanlığı | IB, AP, IGCSE — Muhammet Ertuğrul | Stuttgart">
+  <meta property="og:description" content="IB DP, AP CS A, AP CS Principles ve IGCSE için özel Bilgisayar Bilimi dersleri. Stuttgart'ta ve online okullara yapay zeka danışmanlığı ve robotik koçluğu.">
+  <meta property="og:url" content="https://mrertugrul.com/tr/">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:image" content="https://mrertugrul.com/assets/muhammet.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@imertugrul">
+  <meta name="twitter:image" content="https://mrertugrul.com/assets/muhammet.jpg">
+
+  <meta name="theme-color" content="#f4f5f7">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="../styles.css?v=20260828">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammet Ertuğrul",
+    "jobTitle": "Bilgisayar Bilimi Öğretmeni & Yapay Zeka Danışmanı",
+    "url": "https://mrertugrul.com/tr/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Stuttgart",
+      "addressCountry": "DE"
+    },
+    "knowsAbout": ["Computer Science Education", "AI in Education", "Robotics", "IB Diploma Programme", "AP Computer Science"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#top" class="nav__brand">
+      <span class="mono nav__brand-mark">&lt;/&gt;</span>
+      <span>Muhammet Ertuğrul</span>
+    </a>
+
+    <button type="button" class="nav__toggle" id="navToggle" aria-label="Menüyü aç" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
+
+    <div class="nav__menu" id="navMenu">
+      <a href="#about" class="nav__link">Hakkımda</a>
+      <a href="#tutoring" class="nav__link">Özel Dersler</a>
+      <a href="#consulting" class="nav__link">Okullar İçin</a>
+      <a href="#contact" class="nav__link">İletişim</a>
+      <div class="lang-switch" role="group" aria-label="Dil">
+        <a href="/en/" class="lang-btn">EN</a>
+        <a href="/de/" class="lang-btn">DE</a>
+        <a href="/tr/" class="lang-btn lang-btn--active">TR</a>
+      </div>
+      <a href="#contact" class="btn btn--primary btn--sm nav__cta">İletişime Geçin</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <span class="badge">Bilgisayar Bilimi Eğitmeni · Yapay Zeka Danışmanı · Robotik Koçu</span>
+    <h1 class="hero__title">Bilgisayar Bilimi Eğitimi. Yapay Zekâ Çağına Hazırlanmak.</h1>
+    <p class="hero__text">17 yılı aşkın uluslararası eğitim deneyimimle, Bilgisayar Bilimi eğitimi ve yapay zekânın eğitime entegrasyonu alanlarında öğrenciler, öğretmenler ve okullarla çalışıyorum. IB, AP ve IGCSE gibi uluslararası programlarda öğrenci gelişimini desteklerken; müfredat geliştirme ve öğretmen eğitimi konularında okullara danışmanlık sunuyorum.</p>
+    <div class="hero__actions">
+      <a href="#contact" class="btn btn--primary">İletişime Geçin</a>
+      <a href="#work" class="btn btn--ghost">Projelerimi İnceleyin</a>
+    </div>
+    <div class="chips">
+      <a href="#tutoring" class="chip chip--primary">
+        <span class="chip__dot"></span><span>Birebir Özel Ders</span>
+      </a>
+      <a href="#consulting" class="chip">
+        <span class="chip__dot" style="background:#3a6ea5;"></span><span>Okullar İçin</span>
+      </a>
+      <a href="#consulting" class="chip">
+        <span class="chip__dot" style="background:#7a5aa0;"></span><span>Yapay Zekâ &amp; Bilgisayar Bilimi</span>
+      </a>
+      <a href="#robotics" class="chip">
+        <span class="chip__dot" style="background:#3f7d54;"></span><span>Robotik</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section section--surface2">
+    <div class="container">
+      <span class="label">// hakkımda</span>
+      <div class="about-grid">
+        <div class="about__text">
+          <h2 class="h2 h2--flush">Merhaba, ben <mark>Muhammet</mark>.</h2>
+          <p class="about__p">Bilgisayar Bilimi öğretmenliğine 2009 yılında Robert Kolej'de başladım. On dört yıl boyunca Bilgisayar Bilimi müfredatları geliştirdim, robotik kulüpleri kurdum ve proje tabanlı öğrenmeyi sınıf pratiğimin önemli bir parçası hâline getirdim. 2023 yılında Almanya'ya taşınarak International School of Stuttgart'ta IB DP Bilgisayar Bilimi, AP Bilgisayar Bilimi ve MYP dersleri vermeye başladım; burada sıfırdan bir Robotik ve Yapay Zekâ Kulübü kurdum.</p>
+          <p class="about__p">Bugün çalışmalarımı sınıfın ötesine taşıyor; öğrencilerin ve kurumların teknolojiyle birlikte nasıl öğrenip gelişebileceği üzerine çalışıyorum. Müfredat geliştirme, yapay zekânın eğitime entegrasyonu ve robotik eğitimi alanlarında öğrencilere, öğretmenlere ve okullara destek oluyorum.</p>
+          <p class="about__p">Amacım, teknolojiyi yalnızca öğreten değil; öğrencilerin <strong>üreten, sorgulayan ve geleceğin problemlerine çözüm geliştiren bireyler</strong> olmalarını destekleyen bir öğrenme ortamı oluşturmak.</p>
+          <div class="creds">
+            <span class="cred">IB DP Bilgisayar Bilimi (SL &amp; HL)</span>
+            <span class="cred">Google Sertifikalı Eğitmen</span>
+            <span class="cred">AP Bilgisayar Bilimi A</span>
+            <span class="cred">Dijital Vatandaşlık Eğitmeni</span>
+            <span class="cred">17+ yıl uluslararası eğitim deneyimi</span>
+          </div>
+        </div>
+        <div class="about__photo">
+          <img src="../assets/muhammet.jpg" alt="Muhammet Ertuğrul" width="900" height="1125" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY WORK WITH ME -->
+  <section id="why" class="section">
+    <div class="section-head">
+      <span class="label">// neden benimle?</span>
+      <span class="rule"></span>
+    </div>
+    <h2 class="h2">Neden Benimle Çalışmalısınız?</h2>
+    <p class="lead">Öğrencilere ve okullara sunduğum her şey, iki ülke ve üç uluslararası programdaki doğrudan sınıf deneyiminden doğuyor.</p>
+    <div class="why-grid">
+      <article class="why-card">
+        <h3 class="why-card__title">Sınıf Deneyimi</h3>
+        <p class="why-card__body">Danışmanlık yaptığım konuları bizzat öğretiyorum. Bir okula yapay zekâ entegrasyonu ya da Bilgisayar Bilimi müfredatı konusunda tavsiye verdiğimde, bu on yedi yıllık sınıf deneyimimden geliyor — Robert Kolej İstanbul ve International School of Stuttgart'ta bizzat yaşadığım şeylerden.</p>
+      </article>
+      <article class="why-card">
+        <h3 class="why-card__title">Teknik Derinlik</h3>
+        <p class="why-card__body">Önerdiğim şeyleri bizzat hayata geçiriyorum. Özel bir yapay zekâ ajanı, okul yönetimi için otomatize iş akışları ya da bir robotik müfredatı olsun; stratejiden çalışan yazılıma kadar her aşamayı kendim tamamlayabiliyorum, başka birine ihtiyacım olmuyor.</p>
+      </article>
+      <article class="why-card">
+        <h3 class="why-card__title">Müfredat Uzmanlığı</h3>
+        <p class="why-card__body">IB, AP, IGCSE. Bu programları içeriden tanıyorum: değerlendirme kriterleri, dahili değerlendirmeler, sınav beklentileri. Her ders, sınavın gerçekte neyi ödüllendirdiği üzerine kurulu.</p>
+      </article>
+      <article class="why-card">
+        <h3 class="why-card__title">Bağımsız Bakış Açısı</h3>
+        <p class="why-card__body">Hiçbir yazılım şirketiyle anlaşmam, komisyon ilişkim ya da yönlendirme düzenlemem yok. Bir araç ya da yaklaşım önerdiğimde, bunun tek nedeni o okulun gerçek ihtiyacına uygun olmasıdır.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRIVATE TUTORING -->
+  <section id="tutoring" class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="label">// özel dersler</span>
+        <span class="rule"></span>
+      </div>
+      <h2 class="h2">Birebir Bilgisayar Bilimi dersleri, çevrimiçi.</h2>
+      <p class="lead">Müfredatınıza, eksiklerinize ve hazırlandığınız sınava göre şekillendirilen, odaklı birebir dersler.</p>
+
+      <div class="courses">
+        <!-- IB -->
+        <article class="course-card course-card--ib">
+          <h3 class="course-card__title">IB DP Computer Science</h3>
+          <span class="tag">IB Diploma</span>
+          <p class="course-card__desc">2027 müfredatı, Paper 3 kaldırıldı. SL ve HL.</p>
+          <ul class="feature-list">
+            <li><span class="feature-list__mark">▹</span><span>Yeni 2027 müfredatı, beş temel ünite</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Java ve Python, her iki dil ve her iki paper</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Konu seçiminden teslime kadar IA rehberliği</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Geçmiş sınavlar, değerlendirme kriterleri, sınav teknikleri</span></li>
+          </ul>
+          <a href="#contact" class="card-cta">Detayları İncele →</a>
+        </article>
+
+        <!-- AP CS A -->
+        <article class="course-card course-card--apa">
+          <h3 class="course-card__title">AP Computer Science A</h3>
+          <span class="tag">College Board</span>
+          <p class="course-card__desc">Java, ilk dersten sınava kadar.</p>
+          <ul class="feature-list">
+            <li><span class="feature-list__mark">▹</span><span>Nesne yönelimli Java: sınıflar, kalıtım, özyineleme</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Gerçek geri bildirimli açık uçlu soru çalışmaları</span></li>
+            <li><span class="feature-list__mark">▹</span><span>AP sınav stratejisi: çoktan seçmeli ve FRQ</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Hedef üniversite kredisi ve buna doğru birlikte ilerliyoruz</span></li>
+          </ul>
+          <a href="#contact" class="card-cta">Detayları İncele →</a>
+        </article>
+
+        <!-- AP Principles -->
+        <article class="course-card course-card--app">
+          <h3 class="course-card__title">AP Computer Science Principles</h3>
+          <span class="tag">College Board</span>
+          <p class="course-card__desc">Büyük fikirler, Create görevi ve dönem sonu sınavı.</p>
+          <ul class="feature-list">
+            <li><span class="feature-list__mark">▹</span><span>Programlama ve soyutlama, ön deneyim gerekmez</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Fikirden teslime kadar Create Performance Task</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Veri, internet ve bilişimin etkileri</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Dönem sonu sınavına odaklı hazırlık</span></li>
+          </ul>
+          <a href="#contact" class="card-cta">Detayları İncele →</a>
+        </article>
+
+        <!-- IGCSE -->
+        <article class="course-card course-card--igcse">
+          <h3 class="course-card__title">IGCSE Computer Science</h3>
+          <span class="tag">Cambridge &amp; Edexcel</span>
+          <p class="course-card__desc">14–16 yaş grubu için teori ve programlama.</p>
+          <ul class="feature-list">
+            <li><span class="feature-list__mark">▹</span><span>Cambridge 0478 ve Edexcel, her iki kurul kapsanıyor</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Sözde kod, algoritmalar ve gerçek programlama</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Pratik problem çözme için Python</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Her paper için ayrı hazırlık: teori ve uygulama</span></li>
+          </ul>
+          <a href="#contact" class="card-cta">Detayları İncele →</a>
+        </article>
+
+        <!-- AP Cybersecurity -->
+        <article class="course-card course-card--apc">
+          <h3 class="course-card__title">AP Cybersecurity</h3>
+          <span class="tag">College Board · AP Career Kickstart</span>
+          <p class="course-card__desc">2026'da yeni başlıyor, önceden kodlama bilgisi gerekmiyor.</p>
+          <ul class="feature-list">
+            <li><span class="feature-list__mark">▹</span><span>Ağlar, cihazlar ve veriler için katmanlı savunma</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Üç temel beceri: risk analizi, risk azaltma, saldırı tespiti</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Uygulamalı laboratuvarlar ve gerçek saldırı senaryoları</span></li>
+            <li><span class="feature-list__mark">▹</span><span>İlk ulusal sınav Mayıs 2027'de</span></li>
+          </ul>
+          <a href="#contact" class="card-cta">Detayları İncele →</a>
+        </article>
+      </div>
+
+      <div class="lessons-note">
+        <p>Dersler çevrimiçi ve birebir; ortak bir kod editörüyle yürütülüyor. İlk ders bir değerlendirme seansı. Nerede olduğunuzu, sınavın neler beklediğini ve aradaki farkı birlikte tespit ediyoruz.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI & CS FOR SCHOOLS -->
+  <section id="consulting" class="section">
+    <div class="section-head">
+      <span class="label">// okullarla çalışma</span>
+      <span class="rule"></span>
+    </div>
+    <h2 class="h2">Okullar İçin Yapay Zekâ ve Bilgisayar Bilimi</h2>
+    <p class="lead">Yapay zekâ artık pek çok okulun öncelikli gündem maddelerinden biri. Ancak asıl mesele, teknolojiyi kullanmaya başlamak değil; doğru araçları seçmek, öğretmenleri desteklemek ve yapay zekâyı eğitim süreçlerine gerçekten değer katacak şekilde entegre etmek.</p>
+
+    <div class="cards2">
+      <article class="card">
+        <div class="card__head">
+          <span class="icon-badge icon-badge--blue">◆</span>
+          <h3 class="card__title">Yapay Zekâ Entegrasyon Danışmanlığı</h3>
+        </div>
+        <p class="card__desc">Okulunuzun ihtiyaçlarına uygun, uygulanabilir bir yapay zekâ stratejisi oluşturmanıza ve bunu eğitim süreçlerine sağlıklı bir şekilde entegre etmenize destek oluyorum.</p>
+        <ul class="feature-list feature-list--blue">
+          <li><span class="feature-list__mark">▹</span><span>Ders ve sınıf düzeyine uygun yapay zekâ entegrasyonu</span></li>
+          <li><span class="feature-list__mark">▹</span><span>Öğretmenlere yönelik uygulamalı eğitim ve rehberlik</span></li>
+          <li><span class="feature-list__mark">▹</span><span>İhtiyaçlarınıza uygun, bağımsız ve tarafsız teknoloji önerileri</span></li>
+        </ul>
+        <div class="who">Okul yöneticileri ve müfredat ekipleri için</div>
+      </article>
+
+      <article class="card">
+        <div class="card__head">
+          <span class="icon-badge icon-badge--purple">✳</span>
+          <h3 class="card__title">Okullara Özel Yapay Zekâ Araçları ve Ajanları</h3>
+        </div>
+        <p class="card__desc">Okulunuzun eğitim ve yönetim süreçlerine özel, günlük iş yükünü azaltan ve mevcut çalışma düzeninize uyum sağlayan yapay zekâ araçları geliştiriyorum.</p>
+        <ul class="feature-list feature-list--purple">
+          <li><span class="feature-list__mark">▹</span><span>Tekrarlayan idari işleri otomatikleştiren çözümler</span></li>
+          <li><span class="feature-list__mark">▹</span><span>Öğrencilerin öğrenme süreçlerini destekleyen araçlar ve asistanlar</span></li>
+          <li><span class="feature-list__mark">▹</span><span>Öğretmenlerin planlama ve idari iş yükünü azaltan uygulamalar</span></li>
+        </ul>
+        <div class="who">Okullar ve eğitim teknolojisi girişimleri için</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ROBOTICS & AI PROGRAMME -->
+  <section id="robotics" class="section section--surface">
+    <div class="container">
+      <div class="rob-split">
+        <div class="rob-split__text">
+          <div class="section-head">
+            <span class="label">// uygulamalı mühendislik</span>
+            <span class="rule"></span>
+          </div>
+          <h2 class="h2">Robotik ve Yapay Zekâ Programı</h2>
+          <p class="lead">Öğrencilerin programlama, elektronik, Arduino, Raspberry Pi, sensörler ve yapay zekâyı bir araya getirerek eksiksiz robotik sistemler tasarladığı, kavramdan yarışmaya uzanan yapılandırılmış bir mühendislik programı.</p>
+          <ul class="feature-list feature-list--green feature-list--lg rob-features">
+            <li><span class="feature-list__mark">▹</span><span>Programlama, elektronik, mekanik tasarım ve yapay zekâyı kapsayan tam bir müfredat</span></li>
+            <li><span class="feature-list__mark">▹</span><span>İlk kavramdan yarışma gününe kadar takım koçluğu</span></li>
+            <li><span class="feature-list__mark">▹</span><span>Sürecin her aşamasında yarışmaya hazırlık</span></li>
+          </ul>
+        </div>
+        <div class="rob-split__visual">
+          <div class="carousel" role="region" aria-label="Robotik programı fotoğrafları" aria-roledescription="carousel">
+            <div class="carousel__track">
+              <div class="carousel__slide carousel__slide--active" aria-hidden="false">
+                <svg class="carousel__ph-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4h-3.17L15 2H9L7.17 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-8 13a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
+                <span class="carousel__ph-text">Fotoğraf yakında</span>
+              </div>
+              <div class="carousel__slide" aria-hidden="true">
+                <svg class="carousel__ph-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4h-3.17L15 2H9L7.17 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-8 13a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
+                <span class="carousel__ph-text">Fotoğraf yakında</span>
+              </div>
+              <div class="carousel__slide" aria-hidden="true">
+                <svg class="carousel__ph-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4h-3.17L15 2H9L7.17 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-8 13a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
+                <span class="carousel__ph-text">Fotoğraf yakında</span>
+              </div>
+              <div class="carousel__slide" aria-hidden="true">
+                <svg class="carousel__ph-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4h-3.17L15 2H9L7.17 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-8 13a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
+                <span class="carousel__ph-text">Fotoğraf yakında</span>
+              </div>
+              <div class="carousel__slide" aria-hidden="true">
+                <svg class="carousel__ph-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4h-3.17L15 2H9L7.17 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-8 13a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
+                <span class="carousel__ph-text">Fotoğraf yakında</span>
+              </div>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" aria-label="Önceki fotoğraf">&#8249;</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Sonraki fotoğraf">&#8250;</button>
+            <div class="carousel__dots" role="group" aria-label="Fotoğraf seçin">
+              <button class="carousel__dot carousel__dot--active" aria-label="Fotoğraf 1" aria-pressed="true"></button>
+              <button class="carousel__dot" aria-label="Fotoğraf 2" aria-pressed="false"></button>
+              <button class="carousel__dot" aria-label="Fotoğraf 3" aria-pressed="false"></button>
+              <button class="carousel__dot" aria-label="Fotoğraf 4" aria-pressed="false"></button>
+              <button class="carousel__dot" aria-label="Fotoğraf 5" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="section-head">
+      <span class="label">// deneyim</span>
+      <span class="rule"></span>
+    </div>
+    <h2 class="h2">Çalıştığım Kurumlar.</h2>
+    <div class="exp-grid">
+      <article class="exp-card">
+        <div class="exp-card__head">
+          <div>
+            <div class="exp-card__org">International School of Stuttgart</div>
+            <div class="exp-card__loc">Stuttgart, Almanya</div>
+          </div>
+          <div class="exp-card__period">2023 – Günümüz</div>
+        </div>
+        <ul class="exp-roles">
+          <li class="exp-role"><span>IB DP Bilgisayar Bilimi (SL &amp; HL)</span></li>
+          <li class="exp-role"><span>AP Bilgisayar Bilimi A</span></li>
+          <li class="exp-role"><span>MYP</span></li>
+          <li class="exp-role"><span>Robotik ve Yapay Zekâ Kulübü, Kurucu ve Koç</span></li>
+        </ul>
+      </article>
+
+      <article class="exp-card">
+        <div class="exp-card__head">
+          <div>
+            <div class="exp-card__org">Robert Kolej İstanbul</div>
+            <div class="exp-card__loc">İstanbul, Türkiye</div>
+          </div>
+          <div class="exp-card__period">2009 – 2023</div>
+        </div>
+        <ul class="exp-roles">
+          <li class="exp-role"><span>Bilgisayar Bilimi</span></li>
+          <li class="exp-role"><span>AP Bilgisayar Bilimi</span></li>
+          <li class="exp-role"><span>Robotik Kulübü, Kurucu ve Koç</span></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONFERENCES & WORKSHOPS -->
+  <section id="conferences" class="section section--surface2">
+    <div class="container">
+      <div class="section-head">
+        <span class="label">// konferanslar &amp; sunumlar</span>
+        <span class="rule"></span>
+      </div>
+      <h2 class="h2">Konferanslar ve Çalıştaylar</h2>
+      <ul class="conf-list">
+        <li class="conf-item">
+          <span class="conf-item__name">IB Global Conference</span>
+          <span class="conf-item__loc">Lahey, Hollanda</span>
+        </li>
+        <li class="conf-item">
+          <span class="conf-item__name">Apple Education Leadership Summit (AELS)</span>
+          <span class="conf-item__loc">Münih, Almanya</span>
+        </li>
+        <li class="conf-item">
+          <span class="conf-item__name">ECIS Leadership &amp; Management Conference</span>
+          <span class="conf-item__loc">Frankfurt, Almanya</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
+    <div class="section-head">
+      <span class="label">// sertifikalar</span>
+      <span class="rule"></span>
+    </div>
+    <h2 class="h2">Sertifikalar</h2>
+    <div class="cert-grid">
+      <article class="cert-card">
+        <div class="cert-card__name">Google Sertifikalı Eğitmen</div>
+        <div class="cert-card__org">Google for Education</div>
+      </article>
+      <article class="cert-card">
+        <div class="cert-card__name">Google Sertifikalı Eğitimci Seviye 2</div>
+        <div class="cert-card__org">Google for Education</div>
+      </article>
+      <article class="cert-card">
+        <div class="cert-card__name">Apple Teacher</div>
+        <div class="cert-card__org">Apple</div>
+      </article>
+      <article class="cert-card">
+        <div class="cert-card__name">AP Bilgisayar Bilimi A Sertifikalı Öğretmen</div>
+        <div class="cert-card__org">College Board</div>
+      </article>
+      <article class="cert-card">
+        <div class="cert-card__name">Dijital Vatandaşlık Eğitmeni</div>
+        <div class="cert-card__org">Common Sense Education</div>
+      </article>
+      <article class="cert-card">
+        <div class="cert-card__name">IB Eğitimcisi</div>
+        <div class="cert-card__org">International Baccalaureate</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK -->
+  <section id="work" class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="label">// projeler</span>
+        <span class="rule"></span>
+      </div>
+      <h2 class="h2">Projeler</h2>
+      <p class="lead">Bilgisayar Bilimi eğitimi, yapay zekâ ve mühendislik alanlarındaki projeler.</p>
+      <div class="work-grid">
+        <article class="work-card">
+          <div class="work-card__head">
+            <span class="work-card__category">Yapay Zekâ Destekli Öğrenme Platformu</span>
+            <span class="work-badge work-badge--active">Geliştiriliyor</span>
+          </div>
+          <h3 class="work-card__title">Praxis IB</h3>
+          <p class="work-card__desc">Praxis IB, IB Diploma Bilgisayar Bilimi öğrencileri için geliştirilmiş yapay zekâ destekli bir öğrenme platformudur. Uyarlanabilir alıştırmalar, akıllı geri bildirim mekanizmaları ve müfredata uyumlu çalışma araçlarını bir araya getirerek öğrencilerin hem sınava hazırlık hem de konuyu gerçek anlamda kavrama süreçlerini destekler. 2027 müfredatı temel alınarak tasarlanmıştır.</p>
+        </article>
+        <article class="work-card">
+          <div class="work-card__head">
+            <span class="work-card__category">Okullar İçin Yapay Zekâ Platformu</span>
+            <span class="work-badge work-badge--active">Geliştiriliyor</span>
+          </div>
+          <h3 class="work-card__title">SchoolPro AI</h3>
+          <p class="work-card__desc">SchoolPro AI, okul yönetimi için geliştirilmiş bir yapay zekâ platformudur. Rutin iş akışlarını otomatize eder, müfredat planlaması ve kurumsal iletişimi destekler; yöneticilerin ve öğretmenlerin insan yargısı gerektiren işlere daha fazla zaman ayırmasını sağlayacak pratik araçlar sunar.</p>
+        </article>
+        <article class="work-card">
+          <div class="work-card__head">
+            <span class="work-card__category">Mühendislik Eğitimi</span>
+            <span class="work-badge work-badge--ongoing">Devam Ediyor</span>
+          </div>
+          <h3 class="work-card__title">Robotik ve Yapay Zekâ Programı</h3>
+          <p class="work-card__desc">Robotik ve Yapay Zekâ Programı, öğrenci takımlarına sıfırdan eksiksiz robotik sistemler tasarlayıp inşa edebilmeleri için gerekli müfredatı, koçluğu ve yarışma deneyimini sunuyor. Öğrenciler; programlama, elektronik, Arduino, Raspberry Pi, sensörler, mekanik tasarım ve yapay zekâ alanlarında çalışarak hem teknik becerilerini hem de gerçek kısıtlar altında takım hâlinde çalışma yetkinliklerini geliştiriyor.</p>
+        </article>
+        <article class="work-card">
+          <div class="work-card__head">
+            <span class="work-card__category">Uluslararası Eğitim</span>
+            <span class="work-badge work-badge--completed">Tamamlandı</span>
+          </div>
+          <h3 class="work-card__title">Bilgisayar Bilimi Müfredat Geliştirme</h3>
+          <p class="work-card__desc">Uluslararası okullar için Bilgisayar Bilimi müfredatlarının tasarımı ve uygulamaya konulması. Çalışma; IB Diploma ve AP Bilgisayar Bilimi uyumlaması, ölçme-değerlendirme tasarımı, kapsam ve sıralama planlaması ile okul genelinde program geliştirmeyi kapsamaktadır, ilk taslaktan sınıfa hazır materyallere kadar.</p>
+        </article>
+      </div>
+      <p class="work-note">Geliştirme aşamasında olan projeler mevcuttur.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section--dark">
+    <div class="container container--narrow">
+      <span class="label label--accent">// iletişim</span>
+      <h2 class="h2 h2--flush">İletişime Geçin.</h2>
+      <p class="lead lead--dark">Özel ders, okul projesi ya da başka bir konu için mesaj bırakabilirsiniz. Genellikle bir gün içinde yanıt veririm.</p>
+
+      <form class="form" data-endpoint="" action="" method="POST">
+        <input type="hidden" id="subjectField" name="subject" value="tutoring">
+
+        <label class="form__group-label">İlgilendiğiniz konu</label>
+        <div class="subject-pills">
+          <button type="button" class="pill pill--active" data-subject="tutoring">Özel Ders</button>
+          <button type="button" class="pill" data-subject="schools">Okullar İçin Yapay Zekâ &amp; Bilgisayar Bilimi</button>
+          <button type="button" class="pill" data-subject="other">Diğer</button>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label class="field__label" for="cName">Ad Soyad</label>
+            <input class="field__input" id="cName" name="name" type="text" placeholder="Adınız" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label class="field__label" for="cEmail">E-posta</label>
+            <input class="field__input" id="cEmail" name="email" type="email" placeholder="eposta@adresiniz.com" required autocomplete="email">
+          </div>
+        </div>
+        <div class="field field--full">
+          <label class="field__label" for="cMsg">Mesaj</label>
+          <textarea class="field__input" id="cMsg" name="message" rows="4" placeholder="Ne üzerinde çalışıyorsunuz?" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary form__submit">Gönder</button>
+        <p class="form-note" id="formNote">Teşekkürler. En kısa sürede dönüş yaparım. Doğrudan mertugrul68@gmail.com adresinden de ulaşabilirsiniz.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand"><span class="mono footer__brand-mark">&lt;/&gt;</span><span>Muhammet Ertuğrul</span></div>
+        <div class="footer__tagline">Bilgisayar Bilimi Eğitmeni &amp; Yapay Zekâ Danışmanı</div>
+        <div class="footer__desc">Bilgisayar Bilimi ve Yapay Zekâ alanlarında öğrenciler, eğitimciler ve okullarla çalışıyorum.</div>
+      </div>
+      <div class="footer__links">
+        <div class="footer__social">
+          <a href="mailto:mertugrul68@gmail.com" class="footer__social-link" aria-label="E-posta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/muhammet-r-ertugrul-397b6542/" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://x.com/imertugrul" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://instagram.com/imertugrul84" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+        </div>
+        <a href="https://x.com/imertugrul">@imertugrul</a>
+        <span class="footer__loc">Stuttgart, Almanya · İstanbul, Türkiye</span>
+      </div>
+    </div>
+    <div class="footer__legal-wrap">
+      <div class="footer__legal">© 2026 Muhammet Ertuğrul</div>
+    </div>
+  </footer>
+
+  <script src="../app-static.js?v=20260828"></script>
+</body>
+</html>
