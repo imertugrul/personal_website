@@ -1218,3 +1218,88 @@ textarea.field__input { resize: vertical; }
   border: 0;
   border-radius: 16px;
 }
+
+/* ---- Student reviews (home section) ------------------------------------ */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: 16px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.review-card__stars { color: var(--accent); letter-spacing: 2px; font-size: 15px; }
+.review-card__body { color: var(--ink); line-height: 1.6; flex: 1; white-space: pre-line; }
+.review-card__who { display: flex; flex-direction: column; gap: 2px; }
+.review-card__name { font-weight: 600; }
+.review-card__course { font-size: 12px; color: var(--muted); }
+
+/* ---- Review form + admin pages ----------------------------------------- */
+.review-page { background: var(--paper); }
+.review-wrap, .admin-wrap { max-width: 640px; margin: 0 auto; padding: 40px 24px 80px; }
+.admin-wrap { max-width: 860px; }
+.review-brand { display: inline-flex; margin-bottom: 40px; }
+.review-panel .lead { margin-bottom: 8px; }
+.review-form { margin-top: 28px; display: flex; flex-direction: column; gap: 22px; }
+.review-field { border: 0; display: flex; flex-direction: column; gap: 8px; }
+.review-input {
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.review-input:focus { outline: 2px solid var(--accent-softline); border-color: var(--accent); }
+textarea.review-input { resize: vertical; line-height: 1.55; }
+.review-hint { font-size: 13px; color: var(--muted); }
+.review-error { color: var(--accent-dark); font-size: 14px; }
+.review-consent { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: var(--ink); }
+.review-consent input { margin-top: 4px; accent-color: var(--accent); width: 18px; height: 18px; flex: none; }
+
+.rating { display: inline-flex; flex-direction: row-reverse; justify-content: flex-end; gap: 4px; }
+.rating input { position: absolute; opacity: 0; pointer-events: none; }
+.rating label { font-size: 34px; line-height: 1; color: var(--line); cursor: pointer; transition: color .1s; }
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label { color: var(--accent); }
+.rating input:focus-visible + label { outline: 2px solid var(--accent-softline); border-radius: 4px; }
+
+.admin-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.admin-card { background: var(--card); border: 1px solid var(--card-line); border-radius: 16px; padding: 24px; margin-top: 18px; }
+.admin-h2 { font-family: 'Newsreader', serif; font-weight: 500; font-size: 24px; margin-bottom: 16px; }
+.admin-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+.admin-row .review-input { flex: 1; min-width: 220px; }
+.admin-grid { display: grid; grid-template-columns: 2fr 1.4fr 1fr auto; gap: 12px; align-items: end; }
+@media (max-width: 700px) { .admin-grid { grid-template-columns: 1fr; } }
+.admin-link { margin-top: 16px; padding: 14px; background: var(--surface); border-radius: 10px; display: flex; flex-direction: column; gap: 10px; }
+.admin-link code { font-family: 'JetBrains Mono', monospace; font-size: 13px; word-break: break-all; }
+.admin-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.admin-item { border-top: 1px solid var(--line); padding: 16px 0; display: flex; flex-direction: column; gap: 10px; }
+.admin-item__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+.admin-item__body { line-height: 1.6; white-space: pre-line; }
+.admin-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.admin-badge { font-size: 12px; padding: 2px 8px; border-radius: 99px; background: var(--surface); color: var(--muted); }
+.admin-badge--done { background: var(--c-apa-soft); color: var(--c-apa); }
+.review-page .field__label { color: var(--muted); margin-bottom: 0; }
+.review-page .pill { color: var(--ink); border-color: var(--line); }
+.review-page .pill--active { color: var(--on-accent); border-color: var(--accent); }
+.review-page .btn--ghost.btn--sm { box-shadow: none; }
+.review-page h1 {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 10px 0 12px;
+}
+.review-page .btn { align-self: flex-start; }

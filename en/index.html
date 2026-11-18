@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:wght@400;500&display=swap">
 
-  <link rel="stylesheet" href="../styles.css?v=20261119">
+  <link rel="stylesheet" href="../styles.css?v=20261120">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.min.css">
   <style>
   .iti { position: relative; display: block; width: 100%; }
@@ -282,6 +282,17 @@
         <p>Sessions are online, one-to-one, with a shared code editor. The first session is a diagnostic. We look at where you are, what the exam expects, and where the gap is.</p>
       </div>
     </div>
+  </section>
+
+  <!-- STUDENT REVIEWS (hidden until a review is published in /admin/) -->
+  <section id="reviews" class="section" data-lang="en" hidden>
+    <div class="section-head">
+      <span class="label">// students</span>
+      <span class="rule"></span>
+    </div>
+    <h2 class="h2">What my students say.</h2>
+    <p class="lead">Reviews from students I have taught for AP, IB and IGCSE Computer Science.</p>
+    <div class="reviews-grid"></div>
   </section>
 
   <!-- AI & CS FOR SCHOOLS -->
@@ -627,5 +638,7 @@
   })();
   </script>
   <script src="../app-static.js?v=20260828"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="/reviews.js?v=20261119" defer></script>
 </body>
 </html>
