@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yorum yönetimi | mrertugrul.com</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/styles.css?v=20261120">
+</head>
+<body class="review-page">
+  <main class="admin-wrap">
+    <div class="admin-top">
+      <h1 class="post__title">Yorum yönetimi</h1>
+      <button type="button" class="btn btn--ghost btn--sm" id="logout" hidden>Çıkış</button>
+    </div>
+
+    <!-- Login -->
+    <section id="login" class="admin-card" hidden>
+      <p class="lead">E-postana bir giriş linki gönderilir. Şifre yok.</p>
+      <form id="loginForm" class="admin-row">
+        <input class="review-input" id="email" type="email" value="mertugrul68@gmail.com" required>
+        <button type="submit" class="btn btn--primary">Giriş linki gönder</button>
+      </form>
+      <p class="review-hint" id="loginNote"></p>
+    </section>
+
+    <div id="app" hidden>
+      <!-- New invite -->
+      <section class="admin-card">
+        <h2 class="admin-h2">Yeni yorum linki</h2>
+        <form id="inviteForm" class="admin-grid">
+          <label class="review-field">
+            <span class="field__label">Öğrenci adı soyadı</span>
+            <input class="review-input" id="studentName" type="text" maxlength="80" placeholder="Defne Arpacı" required>
+          </label>
+          <label class="review-field">
+            <span class="field__label">Ders</span>
+            <select class="review-input" id="course">
+              <option>AP CS A</option>
+              <option>AP CS Principles</option>
+              <option>IB Computer Science</option>
+              <option>IGCSE Computer Science</option>
+              <option>AP Cybersecurity</option>
+              <option>Python</option>
+            </select>
+          </label>
+          <label class="review-field">
+            <span class="field__label">Dil</span>
+            <select class="review-input" id="lang">
+              <option value="tr">Türkçe</option>
+              <option value="en">English</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn--primary">Link oluştur</button>
+        </form>
+        <div id="newLink" class="admin-link" hidden>
+          <code id="newLinkUrl"></code>
+          <div class="admin-actions">
+            <button type="button" class="btn btn--ghost btn--sm" id="copyLink">Kopyala</button>
+            <a class="btn btn--primary btn--sm" id="waLink" target="_blank" rel="noopener">WhatsApp ile gönder</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews -->
+      <section class="admin-card">
+        <div class="admin-tabs" role="tablist">
+          <button type="button" class="pill pill--active" data-status="pending">Bekleyen <span id="count-pending"></span></button>
+          <button type="button" class="pill" data-status="published">Yayında <span id="count-published"></span></button>
+          <button type="button" class="pill" data-status="hidden">Gizli <span id="count-hidden"></span></button>
+          <button type="button" class="pill" data-status="invites">Gönderilen linkler</button>
+        </div>
+        <div id="list"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/reviews.js?v=20261119"></script>
+  <script>
+  (function () {
+    'use strict';
+    var client = window.reviewsClient();
+    var $ = function (id) { return document.getElementById(id); };
+    var current = 'pending';
+    var reviews = [];
+    var invites = [];
+
+    function el(tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text != null) n.textContent = text;
+      return n;
+    }
+    function linkFor(token) { return location.origin + '/yorum/?t=' + token; }
+    function fmt(d) { return d ? new Date(d).toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', year: 'numeric' }) : ''; }
+
+    async function refresh() {
+      var r = await client.from('reviews').select('*').order('created_at', { ascending: false });
+      var i = await client.from('review_invites').select('*').order('created_at', { ascending: false });
+      if (r.error || i.error) {
+        $('list').textContent = 'Yetkin yok ya da bir hata oluştu: ' + ((r.error || i.error).message);
+        return;
+      }
+      reviews = r.data; invites = i.data;
+      ['pending', 'published', 'hidden'].forEach(function (s) {
+        var n = reviews.filter(function (x) { return x.status === s; }).length;
+        $('count-' + s).textContent = n ? '(' + n + ')' : '';
+      });
+      render();
+    }
+
+    async function setStatus(id, status) {
+      var patch = { status: status };
+      if (status === 'published') patch.published_at = new Date().toISOString();
+      var res = await client.from('reviews').update(patch).eq('id', id);
+      if (res.error) { alertBox(res.error.message); return; }
+      refresh();
+    }
+
+    function alertBox(msg) {
+      var p = el('p', 'review-error', msg);
+      $('list').prepend(p);
+    }
+
+    function button(label, cls, fn) {
+      var b = el('button', 'btn btn--sm ' + cls, label);
+      b.type = 'button';
+      b.addEventListener('click', fn);
+      return b;
+    }
+
+    function render() {
+      var list = $('list');
+      list.textContent = '';
+
+      if (current === 'invites') {
+        if (!invites.length) { list.appendChild(el('p', 'review-hint', 'Henüz link oluşturulmadı.')); return; }
+        invites.forEach(function (inv) {
+          var row = el('div', 'admin-item');
+          var head = el('div', 'admin-item__head');
+          head.appendChild(el('strong', '', inv.student_name));
+          head.appendChild(el('span', 'mono review-hint', inv.course + ' · ' + inv.lang.toUpperCase() + ' · ' + fmt(inv.created_at)));
+          head.appendChild(el('span', 'admin-badge' + (inv.used_at ? ' admin-badge--done' : ''), inv.used_at ? 'Yorum geldi' : 'Bekleniyor'));
+          row.appendChild(head);
+          if (!inv.used_at) {
+            var acts = el('div', 'admin-actions');
+            acts.appendChild(button('Linki kopyala', 'btn--ghost', function () { navigator.clipboard.writeText(linkFor(inv.token)); this.textContent = 'Kopyalandı'; }));
+            row.appendChild(acts);
+          }
+          list.appendChild(row);
+        });
+        return;
+      }
+
+      var items = reviews.filter(function (x) { return x.status === current; });
+      if (!items.length) {
+        list.appendChild(el('p', 'review-hint', current === 'pending' ? 'Bekleyen yorum yok.' : 'Bu listede yorum yok.'));
+        return;
+      }
+      items.forEach(function (r) {
+        var row = el('div', 'admin-item');
+        var head = el('div', 'admin-item__head');
+        head.appendChild(el('strong', '', r.display_name));
+        head.appendChild(el('span', 'mono review-hint', r.course + ' · ' + r.lang.toUpperCase() + ' · ' + fmt(r.created_at)));
+        head.appendChild(el('span', 'review-card__stars', '★★★★★'.slice(0, r.rating) + '☆☆☆☆☆'.slice(0, 5 - r.rating)));
+        row.appendChild(head);
+        row.appendChild(el('p', 'admin-item__body', r.body));
+        var acts = el('div', 'admin-actions');
+        if (r.status !== 'published') acts.appendChild(button('Yayınla', 'btn--primary', function () { setStatus(r.id, 'published'); }));
+        if (r.status === 'published') acts.appendChild(button('Yayından kaldır', 'btn--ghost', function () { setStatus(r.id, 'hidden'); }));
+        if (r.status === 'pending') acts.appendChild(button('Gizle', 'btn--ghost', function () { setStatus(r.id, 'hidden'); }));
+        row.appendChild(acts);
+        list.appendChild(row);
+      });
+    }
+
+    document.querySelectorAll('.admin-tabs .pill').forEach(function (p) {
+      p.addEventListener('click', function () {
+        document.querySelectorAll('.admin-tabs .pill').forEach(function (o) { o.classList.remove('pill--active'); });
+        p.classList.add('pill--active');
+        current = p.getAttribute('data-status');
+        render();
+      });
+    });
+
+    $('inviteForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var name = $('studentName').value.trim();
+      if (!name) return;
+      var res = await client.from('review_invites')
+        .insert({ student_name: name, course: $('course').value, lang: $('lang').value })
+        .select('token').single();
+      if (res.error) { alertBox(res.error.message); return; }
+      var url = linkFor(res.data.token);
+      var first = name.split(/\s+/)[0];
+      var msg = $('lang').value === 'en'
+        ? 'Hi ' + first + ', could you write a short review of our lessons? It takes two minutes: ' + url
+        : 'Merhaba ' + first + ', derslerimizle ilgili kısa bir yorum yazabilir misin? İki dakika sürer: ' + url;
+      $('newLinkUrl').textContent = url;
+      $('waLink').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+      $('newLink').hidden = false;
+      $('studentName').value = '';
+      refresh();
+    });
+
+    $('copyLink').addEventListener('click', function () {
+      navigator.clipboard.writeText($('newLinkUrl').textContent);
+      this.textContent = 'Kopyalandı';
+      var b = this; setTimeout(function () { b.textContent = 'Kopyala'; }, 1500);
+    });
+
+    $('loginForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var res = await client.auth.signInWithOtp({
+        email: $('email').value.trim(),
+        options: { emailRedirectTo: location.origin + '/admin/', shouldCreateUser: false }
+      });
+      $('loginNote').textContent = res.error ? 'Gönderilemedi: ' + res.error.message : 'Link gönderildi. E-postandaki linke tıkla.';
+    });
+
+    $('logout').addEventListener('click', async function () {
+      await client.auth.signOut();
+      location.reload();
+    });
+
+    async function start() {
+      if (!client) { $('login').hidden = false; $('loginNote').textContent = 'Supabase ayarları eksik.'; return; }
+      var s = await client.auth.getSession();
+      if (s.data.session) {
+        $('app').hidden = false; $('logout').hidden = false;
+        refresh();
+      } else {
+        $('login').hidden = false;
+      }
+    }
+    client && client.auth.onAuthStateChange(function (event, session) {
+      if (session && $('app').hidden) {
+        history.replaceState(null, '', '/admin/');
+        $('login').hidden = true; $('app').hidden = false; $('logout').hidden = false;
+        refresh();
+      }
+    });
+    start();
+  })();
+  </script>
+</body>
+</html>

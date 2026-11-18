@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yorum | Muhammet Ertuğrul</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/styles.css?v=20261120">
+</head>
+<body class="review-page">
+
+  <main class="review-wrap">
+    <a href="/" class="nav__brand review-brand">
+      <span class="mono nav__brand-mark">&lt;/&gt;</span>
+      <span>Muhammet Ertuğrul</span>
+    </a>
+
+    <div id="state-loading" class="review-panel">
+      <p class="lead" data-t="loading"></p>
+    </div>
+
+    <div id="state-error" class="review-panel" hidden>
+      <h1 class="post__title" data-t="errTitle"></h1>
+      <p class="lead" id="errText"></p>
+    </div>
+
+    <div id="state-form" class="review-panel" hidden>
+      <span class="label" data-t="eyebrow"></span>
+      <h1 class="post__title" id="greeting"></h1>
+      <p class="lead" data-t="intro"></p>
+
+      <form id="reviewForm" class="review-form" novalidate>
+        <fieldset class="review-field">
+          <legend class="field__label" data-t="ratingLabel"></legend>
+          <div class="rating" role="radiogroup">
+            <input type="radio" id="r5" name="rating" value="5" required><label for="r5" title="5">★</label>
+            <input type="radio" id="r4" name="rating" value="4"><label for="r4" title="4">★</label>
+            <input type="radio" id="r3" name="rating" value="3"><label for="r3" title="3">★</label>
+            <input type="radio" id="r2" name="rating" value="2"><label for="r2" title="2">★</label>
+            <input type="radio" id="r1" name="rating" value="1"><label for="r1" title="1">★</label>
+          </div>
+        </fieldset>
+
+        <div class="review-field">
+          <label class="field__label" for="body" data-t="bodyLabel"></label>
+          <textarea class="review-input" id="body" name="body" rows="7" minlength="20" maxlength="1500" required></textarea>
+          <p class="review-hint" data-t="bodyHint"></p>
+        </div>
+
+        <div class="review-field">
+          <label class="field__label" for="displayName" data-t="nameLabel"></label>
+          <input class="review-input" id="displayName" name="displayName" type="text" maxlength="60" required>
+          <p class="review-hint" data-t="nameHint"></p>
+        </div>
+
+        <label class="review-consent">
+          <input type="checkbox" id="consent" required>
+          <span data-t="consent"></span>
+        </label>
+
+        <p class="review-error" id="formError" hidden></p>
+        <button type="submit" class="btn btn--primary" data-t="submit"></button>
+      </form>
+    </div>
+
+    <div id="state-done" class="review-panel" hidden>
+      <h1 class="post__title" data-t="doneTitle"></h1>
+      <p class="lead" data-t="doneText"></p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/reviews.js?v=20261119"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    var T = {
+      tr: {
+        loading: 'Yükleniyor…',
+        errTitle: 'Bu link çalışmıyor',
+        invalid: 'Link hatalı ya da eksik kopyalanmış olabilir. Lütfen Muhammet Hoca\'dan yeni bir link isteyin.',
+        used: 'Bu linkle daha önce yorum gönderilmiş. Teşekkürler!',
+        eyebrow: '// yorumunuz',
+        hello: 'Merhaba {name},',
+        intro: 'Derslerimizle ilgili birkaç cümle yazarsanız çok sevinirim. Yorumunuz onaylandıktan sonra mrertugrul.com\'da yayınlanır.',
+        ratingLabel: 'Puanınız',
+        bodyLabel: 'Yorumunuz',
+        bodyHint: 'Neyi faydalı buldunuz, neler değişti? En az 20 karakter.',
+        nameLabel: 'Sitede görünecek isim',
+        nameHint: 'Soyadınızın sadece baş harfi görünür, örneğin "Defne A.".',
+        consent: 'Yorumumun bu isimle sitede yayınlanmasına izin veriyorum. 18 yaşından küçüksem velim de izin verdi.',
+        submit: 'Gönder',
+        needRating: 'Lütfen bir puan seçin.',
+        needBody: 'Yorum en az 20 karakter olmalı.',
+        needName: 'Lütfen sitede görünecek ismi yazın.',
+        needConsent: 'Göndermek için izin kutusunu işaretleyin.',
+        failed: 'Gönderilemedi. Lütfen biraz sonra tekrar deneyin.',
+        doneTitle: 'Teşekkürler!',
+        doneText: 'Yorumunuz bana ulaştı. Onayladıktan sonra sitede yayınlanacak.'
+      },
+      en: {
+        loading: 'Loading…',
+        errTitle: 'This link does not work',
+        invalid: 'The link may be incomplete or mistyped. Please ask Mr Ertuğrul for a new one.',
+        used: 'A review has already been sent with this link. Thank you!',
+        eyebrow: '// your review',
+        hello: 'Hi {name},',
+        intro: 'I would appreciate a few sentences about our lessons. Your review appears on mrertugrul.com once I approve it.',
+        ratingLabel: 'Your rating',
+        bodyLabel: 'Your review',
+        bodyHint: 'What helped, and what changed for you? At least 20 characters.',
+        nameLabel: 'Name shown on the site',
+        nameHint: 'Only the initial of your surname is shown, for example "Defne A.".',
+        consent: 'I agree that my review is published on the site under this name. If I am under 18, my parent agreed too.',
+        submit: 'Send',
+        needRating: 'Please choose a rating.',
+        needBody: 'The review needs at least 20 characters.',
+        needName: 'Please enter the name to show on the site.',
+        needConsent: 'Please tick the consent box to send.',
+        failed: 'Could not send. Please try again in a moment.',
+        doneTitle: 'Thank you!',
+        doneText: 'Your review reached me. It will appear on the site once I approve it.'
+      }
+    };
+
+    var lang = 'tr';
+    function t(k) { return T[lang][k]; }
+    function show(id) {
+      ['state-loading', 'state-error', 'state-form', 'state-done'].forEach(function (s) {
+        document.getElementById(s).hidden = s !== id;
+      });
+    }
+    function applyText() {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-t]').forEach(function (n) { n.textContent = t(n.getAttribute('data-t')); });
+    }
+    function fail(key) {
+      applyText();
+      document.getElementById('errText').textContent = t(key);
+      show('state-error');
+    }
+    function shortName(full) {
+      var parts = full.trim().split(/\s+/);
+      if (parts.length < 2) return parts[0] || '';
+      return parts[0] + ' ' + parts[parts.length - 1].charAt(0).toLocaleUpperCase('tr') + '.';
+    }
+
+    applyText();
+    var token = new URLSearchParams(location.search).get('t') || '';
+    var client = window.reviewsClient();
+    if (!client || !/^[0-9a-f-]{36}$/i.test(token)) { fail('invalid'); return; }
+
+    client.rpc('get_invite', { p_token: token }).then(function (res) {
+      var inv = res.data && res.data[0];
+      if (res.error || !inv) { fail('invalid'); return; }
+      lang = inv.lang === 'en' ? 'en' : 'tr';
+      if (inv.used) { fail('used'); return; }
+      applyText();
+      var first = inv.student_name.trim().split(/\s+/)[0];
+      document.getElementById('greeting').textContent = t('hello').replace('{name}', first);
+      document.getElementById('displayName').value = shortName(inv.student_name);
+      show('state-form');
+    });
+
+    document.getElementById('reviewForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var err = document.getElementById('formError');
+      var rating = document.querySelector('input[name="rating"]:checked');
+      var body = document.getElementById('body').value.trim();
+      var name = document.getElementById('displayName').value.trim();
+      var consent = document.getElementById('consent').checked;
+      var msg = !rating ? 'needRating' : body.length < 20 ? 'needBody' : !name ? 'needName' : !consent ? 'needConsent' : null;
+      if (msg) { err.textContent = t(msg); err.hidden = false; return; }
+      err.hidden = true;
+
+      var btn = this.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      client.rpc('submit_review', {
+        p_token: token,
+        p_display_name: name,
+        p_rating: parseInt(rating.value, 10),
+        p_body: body,
+        p_parent_consent: consent
+      }).then(function (res) {
+        btn.disabled = false;
+        if (res.error) { err.textContent = t('failed'); err.hidden = false; return; }
+        if (res.data === 'ok') { show('state-done'); return; }
+        if (res.data === 'used') { fail('used'); return; }
+        if (res.data === 'consent_required') { err.textContent = t('needConsent'); err.hidden = false; return; }
+        fail('invalid');
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
