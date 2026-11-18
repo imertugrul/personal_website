@@ -56,10 +56,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      if (!endpoint) {
-        if (note) note.classList.add('is-visible');
-        return;
-      }
+      if (!endpoint) return;
 
       var submitBtn = form.querySelector('[type="submit"]');
       if (submitBtn) submitBtn.disabled = true;
@@ -71,14 +68,27 @@
       }).then(function (res) {
         if (res.ok) {
           form.reset();
-          if (note) note.classList.add('is-visible');
+          form.style.transition = 'opacity 0.35s';
+          form.style.opacity = '0';
+          setTimeout(function () {
+            form.style.display = 'none';
+            if (note) {
+              note.style.opacity = '0';
+              note.style.transition = 'opacity 0.35s';
+              note.classList.add('is-visible');
+              note.getBoundingClientRect(); // force reflow before transition
+              note.style.opacity = '1';
+            }
+          }, 350);
         } else {
+          if (submitBtn) submitBtn.disabled = false;
           alert('Something went wrong. Please email mertugrul68@gmail.com directly.');
         }
       }).catch(function () {
+        if (submitBtn) submitBtn.disabled = false;
         alert('Something went wrong. Please email mertugrul68@gmail.com directly.');
       }).finally(function () {
-        if (submitBtn) submitBtn.disabled = false;
+        // submit button re-enabled above on error paths; on success the form is hidden
       });
     });
   }

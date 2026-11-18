@@ -433,6 +433,7 @@ img { display: block; max-width: 100%; }
 }
 .icon-badge--blue { background: var(--c-app-soft); color: var(--c-app); }
 .icon-badge--purple { background: var(--c-igcse-soft); color: var(--c-igcse); }
+.icon-badge--green { background: var(--c-apa-soft); color: var(--c-apa); }
 .who {
   border-top: 1px dashed var(--line);
   padding-top: 13px;
@@ -928,32 +929,6 @@ textarea.field__input { resize: vertical; }
   flex-shrink: 0;
 }
 
-/* ---- Certifications ---------------------------------------------------- */
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-  margin-top: 32px;
-}
-.cert-card {
-  background: var(--card);
-  border: 1px solid var(--card-line);
-  border-radius: 12px;
-  padding: 20px 22px;
-}
-.cert-card__name {
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--ink);
-  line-height: 1.35;
-}
-.cert-card__org {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 6px;
-}
-
 /* ---- Featured Work ----------------------------------------------------- */
 .work-grid {
   display: grid;
@@ -1106,4 +1081,140 @@ textarea.field__input { resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { animation: none !important; transition: none !important; }
+}
+
+/* ---- Article / Blog pages ---------------------------------------------- */
+.article-wrapper {
+  padding-top: 76px; /* clear fixed nav */
+}
+.article-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 24px 88px;
+}
+.article-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+.article-h1 {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.1;
+  margin: 16px 0 44px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.article-body {
+  font-size: 17px;
+  line-height: 1.78;
+  color: var(--ink);
+}
+.article-body p { margin: 0 0 22px; }
+.article-body strong { font-weight: 600; }
+.article-body code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em;
+  background: var(--surface);
+  border: 1px solid var(--card-line);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+.article-cta-band {
+  background: var(--dark);
+  padding: 64px 24px;
+  text-align: center;
+}
+.article-cta-band__title {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.15;
+  color: var(--dark-text);
+  margin-bottom: 28px;
+}
+.article-cta-band__sub {
+  font-size: 16px;
+  color: var(--dark-muted);
+  margin-bottom: 32px;
+}
+
+/* ---- Resources (blog cards on main pages) ------------------------------- */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+.resource-card {
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: 16px;
+  padding: 26px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.resource-card__tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+.resource-card__title {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--ink);
+}
+.resource-card__desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+  flex: 1;
+}
+.resource-card__cta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+.resource-card__cta:hover { color: var(--accent-dark); }
+
+/* ---- YouTube promo section --------------------------------------------- */
+.yt-promo {
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  gap: 52px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .yt-promo { grid-template-columns: 1fr; gap: 36px; }
+}
+.yt-promo__video { width: 100%; }
+.yt-promo__body .label { display: block; margin-bottom: 16px; }
+.yt-promo__body .h2 { margin-bottom: 20px; }
+.yt-promo__body .lead { margin-bottom: 32px; }
+.yt-embed-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--card-line);
+  box-shadow: 0 4px 24px rgba(0,0,0,.07);
+}
+.yt-embed-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 16px;
 }
