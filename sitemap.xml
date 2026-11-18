@@ -3,108 +3,66 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mrertugrul.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mrertugrul.com/en/"/>
   </url>
   <url>
-    <loc>https://mrertugrul.com/de/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/"/>
-  </url>
-  <url>
     <loc>https://mrertugrul.com/tr/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/"/>
   </url>
 
   <!-- IB CS IA Structure -->
   <url>
     <loc>https://mrertugrul.com/en/blog/ib-cs-ia-structure/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/blog/ib-cs-ia-struktur/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/blog/ib-cs-ia-yapilandirma/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mrertugrul.com/en/blog/ib-cs-ia-structure/"/>
   </url>
   <url>
-    <loc>https://mrertugrul.com/de/blog/ib-cs-ia-struktur/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/blog/ib-cs-ia-structure/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/blog/ib-cs-ia-yapilandirma/"/>
-  </url>
-  <url>
     <loc>https://mrertugrul.com/tr/blog/ib-cs-ia-yapilandirma/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/blog/ib-cs-ia-structure/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/blog/ib-cs-ia-struktur/"/>
   </url>
 
   <!-- AP CS A Recursion -->
   <url>
     <loc>https://mrertugrul.com/en/blog/ap-csa-recursion-problems/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/blog/ap-csa-rekursion-aufgaben/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/blog/ap-csa-ozyineleme-sorulari/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mrertugrul.com/en/blog/ap-csa-recursion-problems/"/>
   </url>
   <url>
-    <loc>https://mrertugrul.com/de/blog/ap-csa-rekursion-aufgaben/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/blog/ap-csa-recursion-problems/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/blog/ap-csa-ozyineleme-sorulari/"/>
-  </url>
-  <url>
     <loc>https://mrertugrul.com/tr/blog/ap-csa-ozyineleme-sorulari/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/blog/ap-csa-recursion-problems/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/blog/ap-csa-rekursion-aufgaben/"/>
   </url>
 
   <!-- IGCSE Pseudocode -->
   <url>
     <loc>https://mrertugrul.com/en/blog/igcse-pseudocode-mistakes/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/blog/igcse-pseudocode-fehler/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/blog/igcse-sozde-kod-hatalari/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mrertugrul.com/en/blog/igcse-pseudocode-mistakes/"/>
   </url>
   <url>
-    <loc>https://mrertugrul.com/de/blog/igcse-pseudocode-fehler/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/blog/igcse-pseudocode-mistakes/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/blog/igcse-sozde-kod-hatalari/"/>
-  </url>
-  <url>
     <loc>https://mrertugrul.com/tr/blog/igcse-sozde-kod-hatalari/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/blog/igcse-pseudocode-mistakes/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/blog/igcse-pseudocode-fehler/"/>
   </url>
 
   <!-- AP CSP Create Task -->
   <url>
     <loc>https://mrertugrul.com/en/blog/ap-csp-create-task/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/blog/ap-csp-create-task/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/blog/ap-csp-create-task/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mrertugrul.com/en/blog/ap-csp-create-task/"/>
   </url>
   <url>
-    <loc>https://mrertugrul.com/de/blog/ap-csp-create-task/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/blog/ap-csp-create-task/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/blog/ap-csp-create-task/"/>
-  </url>
-  <url>
     <loc>https://mrertugrul.com/tr/blog/ap-csp-create-task/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/blog/ap-csp-create-task/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/blog/ap-csp-create-task/"/>
   </url>
 
   <!-- AP Cybersecurity -->
   <url>
     <loc>https://mrertugrul.com/en/blog/ap-cybersecurity-overview/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/blog/ap-cybersecurity-uebersicht/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/blog/ap-cybersecurity-genel-bakis/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mrertugrul.com/en/blog/ap-cybersecurity-overview/"/>
   </url>
   <url>
-    <loc>https://mrertugrul.com/de/blog/ap-cybersecurity-uebersicht/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/blog/ap-cybersecurity-overview/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mrertugrul.com/tr/blog/ap-cybersecurity-genel-bakis/"/>
-  </url>
-  <url>
     <loc>https://mrertugrul.com/tr/blog/ap-cybersecurity-genel-bakis/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mrertugrul.com/en/blog/ap-cybersecurity-overview/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mrertugrul.com/de/blog/ap-cybersecurity-uebersicht/"/>
   </url>
 </urlset>

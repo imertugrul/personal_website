@@ -2,6 +2,22 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": true,
+  "redirects": [
+    { "source": "/de", "destination": "/en/", "permanent": true },
+    { "source": "/de/blog/ap-cybersecurity-uebersicht", "destination": "/en/blog/ap-cybersecurity-overview/", "permanent": true },
+    { "source": "/de/blog/ap-cybersecurity-uebersicht/", "destination": "/en/blog/ap-cybersecurity-overview/", "permanent": true },
+    { "source": "/de/blog/ib-cs-ia-struktur", "destination": "/en/blog/ib-cs-ia-structure/", "permanent": true },
+    { "source": "/de/blog/ib-cs-ia-struktur/", "destination": "/en/blog/ib-cs-ia-structure/", "permanent": true },
+    { "source": "/de/blog/ap-csp-create-task", "destination": "/en/blog/ap-csp-create-task/", "permanent": true },
+    { "source": "/de/blog/ap-csp-create-task/", "destination": "/en/blog/ap-csp-create-task/", "permanent": true },
+    { "source": "/de/blog/ap-csa-rekursion-aufgaben", "destination": "/en/blog/ap-csa-recursion-problems/", "permanent": true },
+    { "source": "/de/blog/ap-csa-rekursion-aufgaben/", "destination": "/en/blog/ap-csa-recursion-problems/", "permanent": true },
+    { "source": "/de/blog/igcse-pseudocode-fehler", "destination": "/en/blog/igcse-pseudocode-mistakes/", "permanent": true },
+    { "source": "/de/blog/igcse-pseudocode-fehler/", "destination": "/en/blog/igcse-pseudocode-mistakes/", "permanent": true },
+    { "source": "/de/blog", "destination": "/en/", "permanent": true },
+    { "source": "/de/blog/", "destination": "/en/", "permanent": true },
+    { "source": "/de/:path*", "destination": "/en/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
