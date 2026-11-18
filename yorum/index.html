@@ -156,7 +156,7 @@
     var client = window.reviewsClient();
     if (!client || !/^[0-9a-f-]{36}$/i.test(token)) { fail('invalid'); return; }
 
-    client.rpc('get_invite', { p_token: token }).then(function (res) {
+    client.rpc('site_get_invite', { p_token: token }).then(function (res) {
       var inv = res.data && res.data[0];
       if (res.error || !inv) { fail('invalid'); return; }
       lang = inv.lang === 'en' ? 'en' : 'tr';
@@ -181,7 +181,7 @@
 
       var btn = this.querySelector('button[type="submit"]');
       btn.disabled = true;
-      client.rpc('submit_review', {
+      client.rpc('site_submit_review', {
         p_token: token,
         p_display_name: name,
         p_rating: parseInt(rating.value, 10),

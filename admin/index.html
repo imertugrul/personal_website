@@ -100,8 +100,8 @@
     function fmt(d) { return d ? new Date(d).toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', year: 'numeric' }) : ''; }
 
     async function refresh() {
-      var r = await client.from('reviews').select('*').order('created_at', { ascending: false });
-      var i = await client.from('review_invites').select('*').order('created_at', { ascending: false });
+      var r = await client.from('site_reviews').select('*').order('created_at', { ascending: false });
+      var i = await client.from('site_review_invites').select('*').order('created_at', { ascending: false });
       if (r.error || i.error) {
         $('list').textContent = 'Yetkin yok ya da bir hata oluştu: ' + ((r.error || i.error).message);
         return;
@@ -117,7 +117,7 @@
     async function setStatus(id, status) {
       var patch = { status: status };
       if (status === 'published') patch.published_at = new Date().toISOString();
-      var res = await client.from('reviews').update(patch).eq('id', id);
+      var res = await client.from('site_reviews').update(patch).eq('id', id);
       if (res.error) { alertBox(res.error.message); return; }
       refresh();
     }
@@ -192,7 +192,7 @@
       e.preventDefault();
       var name = $('studentName').value.trim();
       if (!name) return;
-      var res = await client.from('review_invites')
+      var res = await client.from('site_review_invites')
         .insert({ student_name: name, course: $('course').value, lang: $('lang').value })
         .select('token').single();
       if (res.error) { alertBox(res.error.message); return; }

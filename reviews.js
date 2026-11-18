@@ -5,8 +5,8 @@
    ========================================================================= */
 
 window.REVIEWS_CONFIG = {
-  url: 'SUPABASE_URL',
-  anonKey: 'SUPABASE_ANON_KEY'
+  url: 'https://ymjwsarymasoggcaemhq.supabase.co',
+  anonKey: 'sb_publishable_Qhv_CFs4CYItaBEO_aspEg_yGwvy_ts'
 };
 
 window.reviewsClient = function () {
@@ -41,7 +41,7 @@ window.reviewsClient = function () {
 
     var lang = section.getAttribute('data-lang') || 'tr';
     var res = await client
-      .from('reviews')
+      .from('site_reviews')
       .select('id, display_name, course, rating, body, published_at')
       .eq('lang', lang)
       .order('published_at', { ascending: false })
