@@ -25,13 +25,13 @@
     </div>
 
     <div id="state-error" class="review-panel" hidden>
-      <h1 class="post__title" data-t="errTitle"></h1>
+      <h1 class="review-title" data-t="errTitle"></h1>
       <p class="lead" id="errText"></p>
     </div>
 
     <div id="state-form" class="review-panel" hidden>
       <span class="label" data-t="eyebrow"></span>
-      <h1 class="post__title" id="greeting"></h1>
+      <h1 class="review-title" id="greeting"></h1>
       <p class="lead" data-t="intro"></p>
 
       <form id="reviewForm" class="review-form" novalidate>
@@ -69,7 +69,7 @@
     </div>
 
     <div id="state-done" class="review-panel" hidden>
-      <h1 class="post__title" data-t="doneTitle"></h1>
+      <h1 class="review-title" data-t="doneTitle"></h1>
       <p class="lead" data-t="doneText"></p>
     </div>
   </main>
@@ -86,6 +86,7 @@
         errTitle: 'Bu link çalışmıyor',
         invalid: 'Link hatalı ya da eksik kopyalanmış olabilir. Lütfen Muhammet Hoca\'dan yeni bir link isteyin.',
         used: 'Bu linkle daha önce yorum gönderilmiş. Teşekkürler!',
+        usedTitle: 'Yorumunuz zaten ulaştı',
         eyebrow: '// yorumunuz',
         hello: 'Merhaba {name},',
         intro: 'Derslerimizle ilgili birkaç cümle yazarsanız çok sevinirim. Yorumunuz onaylandıktan sonra mrertugrul.com\'da yayınlanır.',
@@ -109,6 +110,7 @@
         errTitle: 'This link does not work',
         invalid: 'The link may be incomplete or mistyped. Please ask Mr Ertuğrul for a new one.',
         used: 'A review has already been sent with this link. Thank you!',
+        usedTitle: 'Your review is already in',
         eyebrow: '// your review',
         hello: 'Hi {name},',
         intro: 'I would appreciate a few sentences about our lessons. Your review appears on mrertugrul.com once I approve it.',
@@ -143,6 +145,7 @@
     function fail(key) {
       applyText();
       document.getElementById('errText').textContent = t(key);
+      if (key === 'used') document.querySelector('#state-error [data-t]').textContent = t('usedTitle');
       show('state-error');
     }
     function shortName(full) {
